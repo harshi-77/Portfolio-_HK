@@ -1,17 +1,17 @@
-import { useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import type { Project, ArchitectureNode } from '../../types/portfolio';
+import { useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import type { Project, ArchitectureNode } from "../../types/portfolio";
 
 interface Props {
   project: Project | null;
   onClose: () => void;
 }
 
-const nodeColors: Record<ArchitectureNode['type'], string> = {
-  input: 'border-green-500/40 text-green-400 bg-green-500/10',
-  process: 'border-blue-500/40 text-blue-400 bg-blue-500/10',
-  output: 'border-purple-500/40 text-purple-400 bg-purple-500/10',
-  storage: 'border-amber-500/40 text-amber-400 bg-amber-500/10',
+const nodeColors: Record<ArchitectureNode["type"], string> = {
+  input: "border-green-500/40 text-green-400 bg-green-500/10",
+  process: "border-blue-500/40 text-blue-400 bg-blue-500/10",
+  output: "border-purple-500/40 text-purple-400 bg-purple-500/10",
+  storage: "border-amber-500/40 text-amber-400 bg-amber-500/10",
 };
 
 function ArchitectureDiagram({ nodes }: { nodes: ArchitectureNode[] }) {
@@ -27,15 +27,23 @@ function ArchitectureDiagram({ nodes }: { nodes: ArchitectureNode[] }) {
             </div>
             {i < nodes.length - 1 && node.connections.length > 0 && (
               <svg width="20" height="12" viewBox="0 0 20 12" fill="none">
-                <path d="M0 6h16M12 1l6 5-6 5" stroke="#6b7280" strokeWidth="1.5" strokeLinecap="round" />
+                <path
+                  d="M0 6h16M12 1l6 5-6 5"
+                  stroke="#6b7280"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                />
               </svg>
             )}
           </div>
         ))}
       </div>
       <div className="flex gap-4 mt-4 flex-wrap">
-        {(['input', 'process', 'output', 'storage'] as const).map((type) => (
-          <span key={type} className={`text-[10px] px-2 py-0.5 rounded border font-inter ${nodeColors[type]}`}>
+        {(["input", "process", "output", "storage"] as const).map((type) => (
+          <span
+            key={type}
+            className={`text-[10px] px-2 py-0.5 rounded border font-inter ${nodeColors[type]}`}
+          >
             {type}
           </span>
         ))}
@@ -47,12 +55,14 @@ function ArchitectureDiagram({ nodes }: { nodes: ArchitectureNode[] }) {
 export default function ProjectDetailModal({ project, onClose }: Props) {
   useEffect(() => {
     if (!project) return;
-    const handler = (e: KeyboardEvent) => { if (e.key === 'Escape') onClose(); };
-    document.addEventListener('keydown', handler);
-    document.body.style.overflow = 'hidden';
+    const handler = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+    };
+    document.addEventListener("keydown", handler);
+    document.body.style.overflow = "hidden";
     return () => {
-      document.removeEventListener('keydown', handler);
-      document.body.style.overflow = '';
+      document.removeEventListener("keydown", handler);
+      document.body.style.overflow = "";
     };
   }, [project, onClose]);
 
@@ -65,7 +75,9 @@ export default function ProjectDetailModal({ project, onClose }: Props) {
           exit={{ opacity: 0 }}
           transition={{ duration: 0.2 }}
           className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm"
-          onClick={(e) => { if (e.target === e.currentTarget) onClose(); }}
+          onClick={(e) => {
+            if (e.target === e.currentTarget) onClose();
+          }}
         >
           <motion.div
             initial={{ opacity: 0, scale: 0.95, y: 20 }}
@@ -84,42 +96,60 @@ export default function ProjectDetailModal({ project, onClose }: Props) {
               </button>
               <div className="flex flex-wrap gap-2 mb-4">
                 {project.tags.map((tag) => (
-                  <span key={tag} className="text-[10px] tracking-wider px-2 py-0.5 rounded border border-white/20 text-white/60 font-inter">
+                  <span
+                    key={tag}
+                    className="text-[10px] tracking-wider px-2 py-0.5 rounded border border-white/20 text-white/60 font-inter"
+                  >
                     {tag}
                   </span>
                 ))}
               </div>
-              <h2 className="font-space text-2xl sm:text-3xl font-700 text-white">{project.title}</h2>
-              <p className="text-sm text-white/60 mt-2 font-inter leading-relaxed">{project.shortDescription}</p>
+              <h2 className="font-space text-2xl sm:text-3xl font-700 text-white">
+                {project.title}
+              </h2>
+              <p className="text-sm text-white/60 mt-2 font-inter leading-relaxed">
+                {project.shortDescription}
+              </p>
             </div>
 
             {/* Body */}
             <div className="p-8 space-y-8">
               {/* Overview */}
               <Section title="Overview">
-                <p className="text-sm text-[var(--text-muted)] font-inter leading-relaxed">{project.description}</p>
+                <p className="text-sm text-[var(--text-muted)] font-inter leading-relaxed">
+                  {project.description}
+                </p>
               </Section>
 
               {/* Problem / Solution */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <Section title="Problem">
-                  <p className="text-sm text-[var(--text-muted)] font-inter leading-relaxed">{project.problem}</p>
+                  <p className="text-sm text-[var(--text-muted)] font-inter leading-relaxed">
+                    {project.problem}
+                  </p>
                 </Section>
                 <Section title="Solution">
-                  <p className="text-sm text-[var(--text-muted)] font-inter leading-relaxed">{project.solution}</p>
+                  <p className="text-sm text-[var(--text-muted)] font-inter leading-relaxed">
+                    {project.solution}
+                  </p>
                 </Section>
               </div>
 
               {/* My Role */}
               <Section title="My Role">
-                <p className="text-sm text-[var(--text-muted)] font-inter leading-relaxed">{project.role}</p>
+                <p className="text-sm text-[var(--text-muted)] font-inter leading-relaxed">
+                  {project.role}
+                </p>
               </Section>
 
               {/* Key Features */}
               <Section title="Key Features">
                 <ul className="space-y-2">
                   {project.keyFeatures.map((f) => (
-                    <li key={f} className="flex items-start gap-2 text-sm text-[var(--text-muted)] font-inter">
+                    <li
+                      key={f}
+                      className="flex items-start gap-2 text-sm text-[var(--text-muted)] font-inter"
+                    >
                       <span className="text-[var(--accent)] mt-0.5 flex-shrink-0">▸</span>
                       {f}
                     </li>
@@ -131,7 +161,10 @@ export default function ProjectDetailModal({ project, onClose }: Props) {
               <Section title="Tech Stack">
                 <div className="flex flex-wrap gap-2">
                   {project.techStack.map((tech) => (
-                    <span key={tech} className="px-3 py-1 text-xs rounded-lg border border-[var(--border)] text-[var(--text-muted)] font-inter bg-[var(--bg)]">
+                    <span
+                      key={tech}
+                      className="px-3 py-1 text-xs rounded-lg border border-[var(--border)] text-[var(--text-muted)] font-inter bg-[var(--bg)]"
+                    >
                       {tech}
                     </span>
                   ))}
@@ -159,7 +192,10 @@ export default function ProjectDetailModal({ project, onClose }: Props) {
               <Section title="Future Improvements">
                 <ul className="space-y-2">
                   {project.futureImprovements.map((f) => (
-                    <li key={f} className="flex items-start gap-2 text-sm text-[var(--text-muted)] font-inter">
+                    <li
+                      key={f}
+                      className="flex items-start gap-2 text-sm text-[var(--text-muted)] font-inter"
+                    >
                       <span className="text-[var(--accent-purple)] mt-0.5 flex-shrink-0">→</span>
                       {f}
                     </li>
@@ -199,7 +235,9 @@ export default function ProjectDetailModal({ project, onClose }: Props) {
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <div>
-      <h3 className="text-xs tracking-[0.2em] text-[var(--text-muted)] font-inter mb-3 uppercase">{title}</h3>
+      <h3 className="text-xs tracking-[0.2em] text-[var(--text-muted)] font-inter mb-3 uppercase">
+        {title}
+      </h3>
       {children}
     </div>
   );

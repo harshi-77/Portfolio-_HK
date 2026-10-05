@@ -1,0 +1,1270 @@
+import { n as __toESM } from "../_runtime.mjs";
+import { i as AnimatePresence, n as useScroll, r as motion, t as useTransform } from "../_libs/framer-motion+[...].mjs";
+import { n as require_jsx_runtime, r as require_react } from "../_libs/react+tanstack__react-query.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-BkUSUhII.js
+var import_react = /* @__PURE__ */ __toESM(require_react());
+var import_jsx_runtime = require_jsx_runtime();
+var harshith_editorial_default = "/assets/harshith-editorial-cIcGTO4e.jpg";
+var project_medical_default = "/assets/project-medical-CHzwY62Q.jpg";
+var project_authenticity_default = "/assets/project-authenticity-9CmOikvI.jpg";
+var project_farmlink_default = "/assets/project-farmlink-4AWM6l0w.jpg";
+var project_systems_default = "/assets/project-systems-DKYM-7QP.jpg";
+var personalInfo = {
+	name: "HARSHITH KUMAR D H",
+	title: "Full-Stack Developer & AI/DS Student",
+	subtitle: "Building intelligent systems using React, Python, and Machine Learning.",
+	description: "B.E. Artificial Intelligence & Data Science student seeking Full-Stack Developer opportunities, with hands-on experience building web applications using React, Python, FastAPI, and machine-learning integrations. Experienced in developing project prototypes with a focus on practical problem solving.",
+	email: "harshith63633@gmail.com",
+	github: "https://github.com/harshi-77",
+	linkedin: "https://linkedin.com/in/harshith-kumar-316a93339",
+	resumeUrl: "/resume.pdf"
+};
+var skillCategories = [
+	{
+		category: "Programming",
+		skills: [
+			{ name: "Python" },
+			{ name: "Java" },
+			{ name: "C++" },
+			{ name: "JavaScript" },
+			{ name: "SQL" }
+		]
+	},
+	{
+		category: "AI / Data Science",
+		skills: [
+			{ name: "Machine Learning" },
+			{ name: "Deep Learning" },
+			{ name: "Computer Vision" },
+			{ name: "NLP" },
+			{ name: "Data Analysis" },
+			{ name: "PyTorch" },
+			{ name: "TensorFlow" },
+			{ name: "Scikit-learn" }
+		]
+	},
+	{
+		category: "Web Development",
+		skills: [
+			{ name: "React" },
+			{ name: "Vite" },
+			{ name: "HTML" },
+			{ name: "CSS" },
+			{ name: "FastAPI" },
+			{ name: "Flask" }
+		]
+	},
+	{
+		category: "Databases",
+		skills: [
+			{ name: "Supabase" },
+			{ name: "MongoDB" },
+			{ name: "Firebase" },
+			{ name: "PostgreSQL" }
+		]
+	},
+	{
+		category: "Tools & Platforms",
+		skills: [
+			{ name: "Git" },
+			{ name: "GitHub" },
+			{ name: "VS Code" },
+			{ name: "Figma" },
+			{ name: "Docker" },
+			{ name: "Jupyter" }
+		]
+	}
+];
+var projects = [
+	{
+		id: "disha-route-planning",
+		title: "DISHA - Route Planning Platform",
+		shortDescription: "Intelligent mobility and route planning platform for dynamic optimization.",
+		description: "Full-stack project for intelligent mobility and dynamic route planning, currently being developed in a team of 6 to optimize travel operations.",
+		problem: "Inefficient route planning in mobility systems causes delays, wasted fuel, and high operating costs.",
+		solution: "Developing a full-stack platform that incorporates dynamic route-planning and optimization algorithms to reduce travel time overhead.",
+		role: "Full-stack development: contributed across frontend (React/Tailwind) and partial backend (FastAPI/Supabase).",
+		keyFeatures: [
+			"Dynamic route optimization and planning",
+			"Real-time tracking and database management",
+			"Interactive user dashboard for mobility operations"
+		],
+		techStack: [
+			"React",
+			"Vite",
+			"Tailwind CSS",
+			"Python",
+			"FastAPI",
+			"Supabase",
+			"PostgreSQL"
+		],
+		architecture: [
+			{
+				id: "ui",
+				label: "React Frontend",
+				type: "input",
+				connections: ["api"]
+			},
+			{
+				id: "api",
+				label: "FastAPI Backend",
+				type: "process",
+				connections: ["db"]
+			},
+			{
+				id: "db",
+				label: "Supabase PostgreSQL",
+				type: "storage",
+				connections: []
+			}
+		],
+		results: ["Currently under development with a team of 6", "Established core frontend and backend infrastructure"],
+		futureImprovements: ["Integrate live traffic data API", "Deploy mobile app version"],
+		githubUrl: "https://github.com/harshi-77",
+		tags: [
+			"Full-Stack",
+			"React",
+			"FastAPI",
+			"Supabase"
+		],
+		gradient: "from-blue-600/20 to-cyan-600/10"
+	},
+	{
+		id: "ai-medical-imaging",
+		title: "AI Medical Imaging Diagnostics",
+		shortDescription: "End-to-end medical application for analyzing X-rays, MRIs, and CT scans.",
+		description: "A comprehensive AI-powered dashboard that analyzes medical imaging data, detecting abnormalities with confidence scores and clinical guidance to assist healthcare providers.",
+		problem: "High volume of medical scans can lead to diagnostic fatigue and delays in critical care reporting.",
+		solution: "Built a multi-stage deep learning pipeline supporting X-ray/MRI/CT uploads that detects anomalies, generates PDF reports, and provides an end-to-end clinician dashboard.",
+		role: "Full-Stack Developer (Team of 3) - implemented AI models and integrated frontend-backend systems.",
+		keyFeatures: [
+			"Multi-modal scan support (X-ray, MRI, CT)",
+			"Abnormality detection with confidence & severity outputs",
+			"PDF clinical reporting engine",
+			"Secure clinician dashboard with authentication"
+		],
+		techStack: [
+			"React",
+			"Vite",
+			"Tailwind CSS",
+			"FastAPI",
+			"Supabase",
+			"PyTorch",
+			"TensorFlow",
+			"EfficientNet-B0",
+			"ResNet18",
+			"MobileNetV2"
+		],
+		architecture: [
+			{
+				id: "input",
+				label: "Scans Upload",
+				type: "input",
+				connections: ["api"]
+			},
+			{
+				id: "api",
+				label: "FastAPI Backend",
+				type: "process",
+				connections: ["model", "db"]
+			},
+			{
+				id: "model",
+				label: "ResNet/EfficientNet",
+				type: "process",
+				connections: ["api"]
+			},
+			{
+				id: "db",
+				label: "Supabase",
+				type: "storage",
+				connections: []
+			}
+		],
+		results: ["Completed project for SJC Institute of Technology Hackathon", "Successfully integrated 3 distinct CNN architectures"],
+		futureImprovements: ["3D volumetric analysis for CT scans", "HIPAA compliant cloud storage integration"],
+		githubUrl: "https://github.com/harshi-77",
+		tags: [
+			"Deep Learning",
+			"Computer Vision",
+			"Healthcare"
+		],
+		gradient: "from-red-600/20 to-rose-600/10"
+	},
+	{
+		id: "smart-email-triage",
+		title: "Smart Email Triage Tool",
+		shortDescription: "Intelligent email management using NLP to categorize and prioritize incoming messages.",
+		description: "An intelligent email application built for a hackathon that utilizes NLP and machine learning to categorize, prioritize, and manage high-volume incoming emails.",
+		problem: "Professionals spend hours manually sorting and prioritizing emails, missing critical communications.",
+		solution: "Developed a classification pipeline that analyzes email text using NLP, automatically tags urgency, and integrates across the full stack from database to frontend dashboard.",
+		role: "Contributed across frontend, backend, database, NLP/ML email classification, API integration, and testing.",
+		keyFeatures: [
+			"NLP-based email categorization and prioritization",
+			"Authentication and secure access",
+			"Interactive email management dashboard"
+		],
+		techStack: [
+			"Python",
+			"NLP",
+			"Machine Learning",
+			"API Integration"
+		],
+		architecture: [
+			{
+				id: "email",
+				label: "Email API",
+				type: "input",
+				connections: ["backend"]
+			},
+			{
+				id: "backend",
+				label: "Backend API",
+				type: "process",
+				connections: ["nlp", "db"]
+			},
+			{
+				id: "nlp",
+				label: "NLP Classifier",
+				type: "process",
+				connections: ["backend"]
+			},
+			{
+				id: "db",
+				label: "Database",
+				type: "storage",
+				connections: []
+			}
+		],
+		results: ["Successfully delivered working prototype for Hackathon", "Certificate Received"],
+		futureImprovements: ["Auto-drafting response feature", "Integration with Gmail/Outlook OAuth"],
+		githubUrl: "https://github.com/harshi-77",
+		tags: [
+			"NLP",
+			"Machine Learning",
+			"Hackathon"
+		],
+		gradient: "from-orange-600/20 to-amber-600/10"
+	},
+	{
+		id: "indian-cattle-recognition",
+		title: "Indian Cattle & Buffalo Breed Recognition",
+		shortDescription: "Computer vision application for identifying regional cattle breeds.",
+		description: "A computer-vision web application that identifies cattle and buffalo breeds from images and provides contextual breed information and related details.",
+		problem: "Farmers and agricultural workers often lack easy tools for identifying and validating specific cattle breeds visually.",
+		solution: "Trained a computer vision model using MobileNetV2 architecture wrapped in a full-stack platform to process uploaded images and identify variants.",
+		role: "Full-Stack Developer (Team of 3)",
+		keyFeatures: [
+			"Image upload and real-time processing",
+			"MobileNetV2-powered classification",
+			"Breed information database integration"
+		],
+		techStack: [
+			"Python",
+			"Machine Learning",
+			"Computer Vision",
+			"MobileNetV2"
+		],
+		architecture: [
+			{
+				id: "ui",
+				label: "Dashboard Upload",
+				type: "input",
+				connections: ["cv"]
+			},
+			{
+				id: "cv",
+				label: "MobileNetV2 Model",
+				type: "process",
+				connections: ["db"]
+			},
+			{
+				id: "db",
+				label: "Breed Info DB",
+				type: "storage",
+				connections: []
+			}
+		],
+		results: ["Successfully completed prototype platform", "Accurate identification across primary regional breeds"],
+		futureImprovements: ["Mobile application release", "Expand dataset for rare breeds"],
+		githubUrl: "https://github.com/harshi-77",
+		tags: [
+			"Computer Vision",
+			"Machine Learning",
+			"MobileNetV2"
+		],
+		gradient: "from-purple-600/20 to-pink-600/10"
+	},
+	{
+		id: "stock-market-analysis",
+		title: "Stock Market Analysis & Prediction",
+		shortDescription: "Analysis and prediction engine for financial stock data.",
+		description: "A college mini project focusing on analyzing historical stock market data and predicting future trends using machine learning techniques and IoT simulation.",
+		problem: "Financial data is highly volatile and difficult to analyze manually for predictive insights.",
+		solution: "Developed an analytics engine utilizing Python and R to process stock data streams and apply ML models for future movement projections.",
+		role: "Developer on a college mini project (Presidency University Certificate).",
+		keyFeatures: [
+			"Historical data processing",
+			"Predictive ML model implementation",
+			"IoT data simulation integration"
+		],
+		techStack: [
+			"Python",
+			"R",
+			"Machine Learning",
+			"Web Development"
+		],
+		architecture: [
+			{
+				id: "data",
+				label: "Stock APIs",
+				type: "input",
+				connections: ["analysis"]
+			},
+			{
+				id: "analysis",
+				label: "Python/R Analytics",
+				type: "process",
+				connections: ["ml"]
+			},
+			{
+				id: "ml",
+				label: "Prediction Model",
+				type: "process",
+				connections: ["ui"]
+			},
+			{
+				id: "ui",
+				label: "Web Dashboard",
+				type: "output",
+				connections: []
+			}
+		],
+		results: ["Fully completed college-level project", "Earned Presidency University Certificate"],
+		futureImprovements: ["Live trading simulator integration", "Sentiment analysis from financial news"],
+		githubUrl: "https://github.com/harshi-77",
+		tags: [
+			"Data Analysis",
+			"Finance",
+			"R",
+			"Python"
+		],
+		gradient: "from-green-600/20 to-emerald-600/10"
+	}
+];
+var timelineEntries = [
+	{
+		id: "edu-1",
+		date: "2024 — Expected 2028",
+		title: "B.E. Artificial Intelligence & Data Science",
+		subtitle: "Sapthagiri NPS University | 5th Semester",
+		description: "B.E. student pursuing specialization in ML, Deep Learning, and Full-Stack Development. Current CGPA: 7.4.",
+		type: "education",
+		tags: [
+			"AI",
+			"Data Science",
+			"Computer Science"
+		]
+	},
+	{
+		id: "edu-2",
+		date: "2024",
+		title: "Pre-University Course (PUC)",
+		subtitle: "Siddhaganga PU College",
+		description: "Completed Pre-University Education with a score of 86%.",
+		type: "education",
+		tags: ["Science"]
+	},
+	{
+		id: "edu-3",
+		date: "2022",
+		title: "Secondary School (SSLC)",
+		subtitle: "BMN Public School",
+		description: "Completed Secondary Education with a score of 80%.",
+		type: "education",
+		tags: ["General"]
+	},
+	{
+		id: "project-1",
+		date: "Ongoing",
+		title: "DISHA - Route Planning Platform",
+		subtitle: "Intelligent Mobility System",
+		description: "Contributing as a Full-Stack developer for intelligent mobility using React, Vite, FastAPI, and Supabase.",
+		type: "project",
+		tags: [
+			"React",
+			"FastAPI",
+			"Supabase"
+		]
+	},
+	{
+		id: "hack-1",
+		date: "2024",
+		title: "Smart Email Triage Tool",
+		subtitle: "Hackathon Project",
+		description: "Developed an intelligent email triage application using NLP and machine learning for email prioritization and drafting.",
+		type: "hackathon",
+		tags: [
+			"NLP",
+			"FastAPI",
+			"React"
+		]
+	},
+	{
+		id: "project-2",
+		date: "2024",
+		title: "AI Medical Imaging Diagnostics",
+		subtitle: "SJC Institute of Technology Hackathon",
+		description: "End-to-end medical imaging app for X-ray/MRI anomaly detection using PyTorch, TensorFlow, and React.",
+		type: "project",
+		tags: [
+			"Computer Vision",
+			"PyTorch",
+			"Medical AI"
+		]
+	},
+	{
+		id: "learn-1",
+		date: "2025 - 2026",
+		title: "Continuous Certifications",
+		subtitle: "Infosys Springboard & Cisco",
+		description: "Completed certifications in Advanced Excel, OpenAI GPT Models, Python Visualization, and CyberOps.",
+		type: "learning",
+		tags: [
+			"Learning",
+			"CyberSecurity",
+			"GPT"
+		]
+	}
+];
+var certifications = [
+	{
+		id: "cert-1",
+		title: "Advanced Excel Training 2019",
+		organization: "Infosys Springboard",
+		date: "2026",
+		credentialId: "INF-EXCEL-2026",
+		credentialUrl: "https://springboard.infosys.com",
+		description: "Comprehensive training in advanced Excel functionality including data manipulation and pivot tables.",
+		skills: ["Microsoft Excel", "Data Analysis"]
+	},
+	{
+		id: "cert-2",
+		title: "Introduction to OpenAI GPT Models",
+		organization: "Infosys Springboard",
+		date: "2026",
+		credentialId: "INF-GPT-2026",
+		credentialUrl: "https://springboard.infosys.com",
+		description: "Understanding large language models, prompting techniques, and integration basics.",
+		skills: [
+			"OpenAI",
+			"GPT",
+			"Prompt Engineering"
+		]
+	},
+	{
+		id: "cert-3",
+		title: "Data Visualisation with Python",
+		organization: "Infosys Springboard",
+		date: "2026",
+		credentialId: "INF-DATAV-2026",
+		credentialUrl: "https://springboard.infosys.com",
+		description: "Training in visualizing complex data sets programmatically using Python libraries.",
+		skills: [
+			"Python",
+			"Data Visualization",
+			"Matplotlib"
+		]
+	},
+	{
+		id: "cert-4",
+		title: "CyberOps Associate",
+		organization: "Cisco Networking Academy",
+		date: "2025",
+		credentialId: "CISCO-CYBER-2025",
+		credentialUrl: "https://netacad.com",
+		description: "Fundamental knowledge in cybersecurity operations and threat hunting.",
+		skills: [
+			"Cybersecurity",
+			"Networking",
+			"Security Ops"
+		]
+	},
+	{
+		id: "cert-5",
+		title: "Introduction to Microcontrollers & Coding",
+		organization: "Infosys Springboard (Centrada)",
+		date: "2026",
+		credentialId: "INF-MICRO-2026",
+		credentialUrl: "https://springboard.infosys.com",
+		description: "Hardware integration and programming with microcontrollers.",
+		skills: [
+			"Microcontrollers",
+			"IoT",
+			"Hardware"
+		]
+	}
+];
+var achievements = [
+	{
+		id: "ach-1",
+		title: "SJC Institute Hackathon",
+		description: "Built an end-to-end AI Medical Diagnostics application using deep learning in a team of 3.",
+		date: "2023",
+		category: "Competition",
+		impact: "Completed working prototype"
+	},
+	{
+		id: "ach-2",
+		title: "Smart Email Triage completion",
+		description: "Developed an intelligent email triage application using NLP achieving completion certification.",
+		date: "2024",
+		category: "Competition",
+		impact: "Certificate Received"
+	},
+	{
+		id: "ach-3",
+		title: "SIH 2026 - FarmLink AI",
+		description: "Contributed research and presentation work addressing farmer-to-buyer platforms for problem statement SIH26033.",
+		date: "2026",
+		category: "Research",
+		impact: "Certificate Received"
+	},
+	{
+		id: "ach-4",
+		title: "Stock Market Analysis Certification",
+		description: "Completed a developer mini-project for stock market predictive analysis.",
+		date: "2024",
+		category: "Academic",
+		impact: "Presidency University Certificate"
+	}
+];
+var nav = [
+	"about",
+	"skills",
+	"projects",
+	"journey",
+	"certifications",
+	"contact"
+];
+var projectImages = [
+	project_systems_default,
+	project_medical_default,
+	project_authenticity_default,
+	project_farmlink_default,
+	project_systems_default
+];
+var reveal = {
+	initial: {
+		opacity: 0,
+		y: 28
+	},
+	whileInView: {
+		opacity: 1,
+		y: 0
+	},
+	viewport: {
+		once: true,
+		margin: "-80px"
+	},
+	transition: { duration: .7 }
+};
+function Arrow() {
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+		"aria-hidden": "true",
+		children: "↗"
+	});
+}
+function Portfolio() {
+	const [menuOpen, setMenuOpen] = (0, import_react.useState)(false);
+	const [ceraOpen, setCeraOpen] = (0, import_react.useState)(false);
+	const [selected, setSelected] = (0, import_react.useState)(null);
+	const { scrollYProgress } = useScroll();
+	const portraitY = useTransform(scrollYProgress, [0, .25], [0, 90]);
+	const titleX = useTransform(scrollYProgress, [0, .18], [0, -70]);
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+		className: "site-shell",
+		children: [
+			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("header", {
+				className: "nav-shell",
+				children: [
+					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
+						href: "#top",
+						className: "brand",
+						"aria-label": "Harshith Kumar home",
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "HK" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("small", { children: "AI / DS" })]
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("nav", {
+						className: "desktop-nav",
+						"aria-label": "Main navigation",
+						children: nav.map((item) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
+							href: `#${item}`,
+							children: item
+						}, item))
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+						className: "nav-actions",
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
+							className: "cera-link",
+							onClick: () => setCeraOpen(true),
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("i", {}), " CERA"]
+						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+							className: "menu-button",
+							onClick: () => setMenuOpen((v) => !v),
+							"aria-label": "Toggle navigation",
+							children: menuOpen ? "×" : "≡"
+						})]
+					})
+				]
+			}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(AnimatePresence, { children: menuOpen && /* @__PURE__ */ (0, import_jsx_runtime.jsx)(motion.nav, {
+				className: "mobile-nav",
+				initial: {
+					opacity: 0,
+					y: -12
+				},
+				animate: {
+					opacity: 1,
+					y: 0
+				},
+				exit: {
+					opacity: 0,
+					y: -12
+				},
+				children: nav.map((item) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
+					href: `#${item}`,
+					onClick: () => setMenuOpen(false),
+					children: item
+				}, item))
+			}) }),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("main", { children: [
+				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", {
+					id: "top",
+					className: "hero",
+					children: [
+						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							className: "hero-kicker",
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "Portfolio / 2026" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "Bengaluru, India" })]
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(motion.div, {
+							className: "portrait-wrap",
+							style: { y: portraitY },
+							initial: {
+								opacity: 0,
+								scale: 1.04
+							},
+							animate: {
+								opacity: 1,
+								scale: 1
+							},
+							transition: { duration: 1.1 },
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
+								src: harshith_editorial_default,
+								width: 1200,
+								height: 1600,
+								alt: "Editorial portrait representing Harshith Kumar"
+							}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+								className: "portrait-index",
+								children: "01"
+							})]
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(motion.div, {
+							className: "hero-title",
+							style: { x: titleX },
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(motion.h1, {
+								initial: {
+									opacity: 0,
+									y: 70
+								},
+								animate: {
+									opacity: 1,
+									y: 0
+								},
+								transition: {
+									duration: .85,
+									delay: .15
+								},
+								children: "HARSHITH"
+							}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(motion.h1, {
+								className: "outline",
+								initial: {
+									opacity: 0,
+									y: 70
+								},
+								animate: {
+									opacity: 1,
+									y: 0
+								},
+								transition: {
+									duration: .85,
+									delay: .28
+								},
+								children: "KUMAR"
+							})]
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(motion.div, {
+							className: "hero-copy",
+							initial: {
+								opacity: 0,
+								y: 20
+							},
+							animate: {
+								opacity: 1,
+								y: 0
+							},
+							transition: { delay: .65 },
+							children: [
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+									className: "eyebrow",
+									children: "AI & DATA SCIENCE"
+								}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: personalInfo.subtitle }),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+									className: "hero-links",
+									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
+										href: "#projects",
+										children: ["Selected work ", /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Arrow, {})]
+									}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
+										href: personalInfo.resumeUrl,
+										children: ["Résumé ", /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Arrow, {})]
+									})]
+								})
+							]
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							className: "scroll-mark",
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "SCROLL" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("i", {})]
+						})
+					]
+				}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", {
+					id: "about",
+					className: "section light-section",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(SectionHead, {
+						index: "01",
+						label: "About",
+						title: "Intelligence, made useful."
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+						className: "about-grid",
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(motion.p, {
+							...reveal,
+							className: "statement",
+							children: "I build systems that turn complex data into clear, measurable outcomes."
+						}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(motion.div, {
+							...reveal,
+							className: "about-copy",
+							children: [
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: personalInfo.description }),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: "My work moves from exploration and model design through deployment, with explainability and the end user kept in view." }),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+									className: "fact-row",
+									children: [
+										/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("b", { children: "05" }), "Selected projects"] }),
+										/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("b", { children: "04" }), "Core disciplines"] }),
+										/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("b", { children: "10K+" }), "Images processed"] })
+									]
+								})
+							]
+						})]
+					})]
+				}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", {
+					id: "skills",
+					className: "section dark-section",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(SectionHead, {
+						index: "02",
+						label: "Capabilities",
+						title: "Tools are temporary. Thinking scales."
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+						className: "skills-list",
+						children: skillCategories.map((group, i) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(motion.div, {
+							...reveal,
+							className: "skill-row",
+							children: [
+								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", { children: ["0", i + 1] }),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", { children: group.category }),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: group.skills.map((s) => s.name).join(" · ") })
+							]
+						}, group.category))
+					})]
+				}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", {
+					id: "projects",
+					className: "section projects-section",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(SectionHead, {
+						index: "03",
+						label: "Selected work",
+						title: "Built for the real world."
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+						className: "project-list",
+						children: projects.map((project, i) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(motion.article, {
+							...reveal,
+							className: `project-row ${i % 2 ? "reverse" : ""}`,
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
+								className: "project-image",
+								onClick: () => setSelected(project),
+								"aria-label": `Open ${project.title}`,
+								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
+									src: projectImages[i],
+									loading: "lazy",
+									width: 1600,
+									height: 1008,
+									alt: ""
+								}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", { children: ["View case study ", /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Arrow, {})] })]
+							}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+								className: "project-copy",
+								children: [
+									/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+										className: "project-meta",
+										children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", { children: ["0", i + 1] }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: project.tags.slice(0, 2).join(" / ") })]
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", { children: project.title }),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: project.shortDescription }),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+										className: "project-actions",
+										children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
+											onClick: () => setSelected(project),
+											children: ["Explore project ", /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Arrow, {})]
+										}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
+											href: project.githubUrl,
+											target: "_blank",
+											rel: "noreferrer",
+											children: ["GitHub ", /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Arrow, {})]
+										})]
+									})
+								]
+							})]
+						}, project.id))
+					})]
+				}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", {
+					id: "journey",
+					className: "section light-section",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(SectionHead, {
+						index: "04",
+						label: "Journey",
+						title: "Learning in public."
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+						className: "timeline",
+						children: timelineEntries.map((entry, i) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(motion.article, {
+							...reveal,
+							children: [
+								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
+									className: "timeline-no",
+									children: ["0", i + 1]
+								}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("time", { children: entry.date }),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+										className: "eyebrow",
+										children: entry.type
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", { children: entry.title }),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h4", { children: entry.subtitle }),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: entry.description })
+								] })
+							]
+						}, entry.id))
+					})]
+				}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", {
+					id: "certifications",
+					className: "section dark-section",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(SectionHead, {
+						index: "05",
+						label: "Credentials",
+						title: "Proof of practice."
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+						className: "cert-grid",
+						children: certifications.map((cert, i) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(motion.article, {
+							...reveal,
+							children: [
+								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", { children: ["0", i + 1] }),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+									className: "eyebrow",
+									children: cert.date
+								}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", { children: cert.title }),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: cert.organization }),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("small", { children: cert.skills.join(" · ") })
+							]
+						}, cert.id))
+					})]
+				}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", {
+					id: "achievements",
+					className: "section signal-section",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(SectionHead, {
+						index: "06",
+						label: "Recognition",
+						title: "Impact, quantified."
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+						className: "achievement-strip",
+						children: achievements.map((item) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("article", { children: [
+							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", { children: [
+								item.category,
+								" / ",
+								item.date
+							] }),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", { children: item.title }),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("strong", { children: item.impact })
+						] }, item.id))
+					})]
+				}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", {
+					id: "github",
+					className: "github-section",
+					children: [
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+							className: "eyebrow",
+							children: "OPEN SOURCE / GITHUB"
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("h2", { children: [
+							"Code should be",
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
+							"seen in motion."
+						] }),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
+							href: personalInfo.github,
+							target: "_blank",
+							rel: "noreferrer",
+							children: ["Explore repositories ", /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Arrow, {})]
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)(GithubStats, {})
+					]
+				}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", {
+					id: "contact",
+					className: "section contact-section",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(SectionHead, {
+						index: "07",
+						label: "Contact",
+						title: "Start a conversation."
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ContactForm, {})]
+				})
+			] }),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("footer", { children: [
+				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", { children: [
+					"© ",
+					(/* @__PURE__ */ new Date()).getFullYear(),
+					" Harshith Kumar"
+				] }),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "AI / DATA / SOFTWARE" }),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
+					href: "#top",
+					children: "Back to top ↑"
+				})
+			] }),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
+				className: "cera-orb",
+				onClick: () => setCeraOpen(true),
+				"aria-label": "Open CERA",
+				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "C" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("i", {})]
+			}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Cera, {
+				open: ceraOpen,
+				onClose: () => setCeraOpen(false)
+			}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(ProjectModal, {
+				project: selected,
+				onClose: () => setSelected(null)
+			})
+		]
+	});
+}
+function SectionHead({ index, label, title }) {
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(motion.header, {
+		...reveal,
+		className: "section-head",
+		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: index }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+			className: "eyebrow",
+			children: label
+		})] }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", { children: title })]
+	});
+}
+function ContactForm() {
+	const [values, setValues] = (0, import_react.useState)({
+		name: "",
+		email: "",
+		message: ""
+	});
+	const submit = (e) => {
+		e.preventDefault();
+		window.location.href = `mailto:${personalInfo.email}?subject=${encodeURIComponent(`Portfolio enquiry from ${values.name}`)}&body=${encodeURIComponent(`${values.message}\n\nReply to: ${values.email}`)}`;
+	};
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+		className: "contact-grid",
+		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: "Available for internships, research collaborations, and ambitious AI projects." }),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
+				href: `mailto:${personalInfo.email}`,
+				children: [
+					personalInfo.email,
+					" ",
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Arrow, {})
+				]
+			}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
+				href: personalInfo.linkedin,
+				target: "_blank",
+				rel: "noreferrer",
+				children: ["LinkedIn ", /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Arrow, {})]
+			}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
+				href: personalInfo.github,
+				target: "_blank",
+				rel: "noreferrer",
+				children: ["GitHub ", /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Arrow, {})]
+			})
+		] }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("form", {
+			onSubmit: submit,
+			children: [
+				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("label", { children: ["Name", /* @__PURE__ */ (0, import_jsx_runtime.jsx)("input", {
+					required: true,
+					value: values.name,
+					onChange: (e) => setValues({
+						...values,
+						name: e.target.value
+					})
+				})] }),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("label", { children: ["Email", /* @__PURE__ */ (0, import_jsx_runtime.jsx)("input", {
+					required: true,
+					type: "email",
+					value: values.email,
+					onChange: (e) => setValues({
+						...values,
+						email: e.target.value
+					})
+				})] }),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("label", { children: ["Message", /* @__PURE__ */ (0, import_jsx_runtime.jsx)("textarea", {
+					required: true,
+					rows: 4,
+					value: values.message,
+					onChange: (e) => setValues({
+						...values,
+						message: e.target.value
+					})
+				})] }),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
+					type: "submit",
+					children: ["Compose message ", /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Arrow, {})]
+				})
+			]
+		})]
+	});
+}
+function ProjectModal({ project, onClose }) {
+	(0, import_react.useEffect)(() => {
+		if (!project) return;
+		const fn = (e) => e.key === "Escape" && onClose();
+		document.body.style.overflow = "hidden";
+		window.addEventListener("keydown", fn);
+		return () => {
+			document.body.style.overflow = "";
+			window.removeEventListener("keydown", fn);
+		};
+	}, [project, onClose]);
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(AnimatePresence, { children: project && /* @__PURE__ */ (0, import_jsx_runtime.jsx)(motion.div, {
+		className: "modal-backdrop",
+		initial: { opacity: 0 },
+		animate: { opacity: 1 },
+		exit: { opacity: 0 },
+		onMouseDown: (e) => e.currentTarget === e.target && onClose(),
+		children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(motion.article, {
+			className: "project-modal",
+			initial: { y: 60 },
+			animate: { y: 0 },
+			exit: { y: 60 },
+			children: [
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+					className: "modal-close",
+					onClick: onClose,
+					"aria-label": "Close",
+					children: "×"
+				}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", {
+					className: "eyebrow",
+					children: ["CASE STUDY / ", project.tags.join(" / ")]
+				}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", { children: project.title }),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+					className: "modal-lead",
+					children: project.description
+				}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "modal-columns",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", { children: "Problem" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: project.problem })] }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", { children: "Solution" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: project.solution })] })]
+				}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "modal-block",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", { children: "My role" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: project.role })]
+				}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "modal-columns",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", { children: "Key features" }), project.keyFeatures.map((x) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", { children: ["— ", x] }, x))] }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", { children: "Results" }), project.results.map((x) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", { children: ["✓ ", x] }, x))] })]
+				}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+					className: "tech-line",
+					children: project.techStack.join(" · ")
+				}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
+					className: "modal-link",
+					href: project.githubUrl,
+					target: "_blank",
+					rel: "noreferrer",
+					children: ["View on GitHub ", /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Arrow, {})]
+				})
+			]
+		})
+	}) });
+}
+var ceraReplies = [
+	{
+		keys: ["medical", "imaging"],
+		answer: "Harshith built an end-to-end AI medical imaging application detecting anomalies in X-rays and MRIs, using PyTorch and TensorFlow."
+	},
+	{
+		keys: ["project", "built"],
+		answer: "Harshith has built intelligent mobility platforms (DISHA), AI medical imaging dashboards, smart email triage tools, cattle breed recognition systems, and stock market predictors."
+	},
+	{
+		keys: ["skill", "technolog"],
+		answer: "His toolkit includes Python, PyTorch, TensorFlow, React, FastAPI, computer vision, NLP, PostgreSQL, and modern deployment tools."
+	},
+	{
+		keys: ["certif"],
+		answer: "His credentials span Deep Learning, Machine Learning, NLP, and AWS Cloud fundamentals."
+	},
+	{
+		keys: ["contact", "reach"],
+		answer: `You can contact Harshith at ${personalInfo.email}, or use the contact section below.`
+	},
+	{
+		keys: ["who", "harshith"],
+		answer: "Harshith Kumar is an AI & Data Science student focused on useful, explainable intelligent systems."
+	}
+];
+function Cera({ open, onClose }) {
+	const [input, setInput] = (0, import_react.useState)("");
+	const [messages, setMessages] = (0, import_react.useState)([{
+		role: "assistant",
+		text: "I’m CERA — your guide to Harshith Kumar. Ask about his work, skills, credentials, or contact details."
+	}]);
+	const suggestions = [
+		"Who is Harshith?",
+		"Show me his projects.",
+		"Tell me about medical imaging.",
+		"How can I contact him?"
+	];
+	const send = (text = input) => {
+		const value = text.trim();
+		if (!value) return;
+		const lower = value.toLowerCase();
+		const found = ceraReplies.find((r) => r.keys.some((k) => lower.includes(k)));
+		setMessages((m) => [
+			...m,
+			{
+				role: "user",
+				text: value
+			},
+			{
+				role: "assistant",
+				text: found?.answer ?? "I can guide you through Harshith’s projects, skills, certifications, and contact information."
+			}
+		]);
+		setInput("");
+	};
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(AnimatePresence, { children: open && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(motion.aside, {
+		className: "cera-panel",
+		initial: {
+			opacity: 0,
+			x: 30
+		},
+		animate: {
+			opacity: 1,
+			x: 0
+		},
+		exit: {
+			opacity: 0,
+			x: 30
+		},
+		children: [
+			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("header", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: "CERA" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("small", { children: "Your AI guide to Harshith Kumar" })] }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+				onClick: onClose,
+				"aria-label": "Close CERA",
+				children: "×"
+			})] }),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+				className: "cera-messages",
+				children: [messages.map((m, i) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+					className: m.role,
+					children: m.text
+				}, i)), messages.length === 1 && /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+					className: "suggestions",
+					children: suggestions.map((s) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+						onClick: () => send(s),
+						children: s
+					}, s))
+				})]
+			}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("form", {
+				onSubmit: (e) => {
+					e.preventDefault();
+					send();
+				},
+				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("input", {
+					value: input,
+					onChange: (e) => setInput(e.target.value),
+					placeholder: "Ask about Harshith…",
+					"aria-label": "Ask CERA"
+				}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+					type: "submit",
+					children: "→"
+				})]
+			}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+				className: "cera-note",
+				children: "Portfolio guide · API-ready"
+			})
+		]
+	}) });
+}
+function GithubStats() {
+	const [stats, setStats] = (0, import_react.useState)({
+		repos: 0,
+		stars: 0,
+		followers: 0
+	});
+	(0, import_react.useEffect)(() => {
+		fetch("https://api.github.com/users/harshi-77").then((r) => r.json()).then((d) => {
+			if (d && d.public_repos !== void 0) setStats((s) => ({
+				...s,
+				repos: d.public_repos,
+				followers: d.followers
+			}));
+		}).catch((e) => console.error(e));
+	}, []);
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+		style: {
+			marginTop: "2rem",
+			display: "flex",
+			gap: "2rem",
+			justifyContent: "center"
+		},
+		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
+			style: { fontSize: "2rem" },
+			children: stats.repos
+		}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+			className: "eyebrow",
+			children: "Repositories"
+		})] }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
+			style: { fontSize: "2rem" },
+			children: stats.followers
+		}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+			className: "eyebrow",
+			children: "Followers"
+		})] })]
+	});
+}
+//#endregion
+export { Portfolio as component };

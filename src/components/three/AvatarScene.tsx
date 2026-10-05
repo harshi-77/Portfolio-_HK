@@ -1,8 +1,8 @@
-import { Suspense, useRef, Component, ErrorInfo, ReactNode } from 'react';
-import { Canvas, useFrame } from '@react-three/fiber';
-import { useGLTF, Environment } from '@react-three/drei';
-import * as THREE from 'three';
-import { useReducedMotion } from '../../hooks/useReducedMotion';
+import { Suspense, useRef, Component, ErrorInfo, ReactNode } from "react";
+import { Canvas, useFrame } from "@react-three/fiber";
+import { useGLTF, Environment } from "@react-three/drei";
+import * as THREE from "three";
+import { useReducedMotion } from "../../hooks/useReducedMotion";
 
 // Error boundary for GLB loading
 class GLBErrorBoundary extends Component<
@@ -29,7 +29,7 @@ class GLBErrorBoundary extends Component<
 }
 
 function AvatarGLB({ scrollProgress }: { scrollProgress: number }) {
-  const { scene } = useGLTF('/models/harshith-avatar.glb');
+  const { scene } = useGLTF("/models/harshith-avatar.glb");
   const ref = useRef<THREE.Group>(null);
   const reducedMotion = useReducedMotion();
 
@@ -56,16 +56,16 @@ function PlaceholderFigure({ scrollProgress }: { scrollProgress: number }) {
   });
 
   const bodyMat = new THREE.MeshStandardMaterial({
-    color: new THREE.Color('#1e3a5f'),
+    color: new THREE.Color("#1e3a5f"),
     metalness: 0.6,
     roughness: 0.3,
     envMapIntensity: 0.8,
   });
   const accentMat = new THREE.MeshStandardMaterial({
-    color: new THREE.Color('#3b82f6'),
+    color: new THREE.Color("#3b82f6"),
     metalness: 0.8,
     roughness: 0.2,
-    emissive: new THREE.Color('#1e40af'),
+    emissive: new THREE.Color("#1e40af"),
     emissiveIntensity: 0.3,
   });
 
@@ -156,21 +156,12 @@ export default function AvatarScene({ scrollProgress }: AvatarSceneProps) {
       <Canvas
         camera={{ position: [0, 0.3, 3.2], fov: 45 }}
         gl={{ antialias: true, alpha: true }}
-        style={{ background: 'transparent' }}
+        style={{ background: "transparent" }}
       >
         {/* Lighting */}
         <ambientLight intensity={0.25} color="#c8d4e8" />
-        <directionalLight
-          position={[3, 5, 3]}
-          intensity={1.4}
-          color="#dde8ff"
-          castShadow
-        />
-        <directionalLight
-          position={[-4, 2, -2]}
-          intensity={0.5}
-          color="#7c3aed"
-        />
+        <directionalLight position={[3, 5, 3]} intensity={1.4} color="#dde8ff" castShadow />
+        <directionalLight position={[-4, 2, -2]} intensity={0.5} color="#7c3aed" />
         <pointLight position={[0, -1.5, 1.5]} intensity={0.3} color="#3b82f6" />
 
         <Suspense fallback={<PlaceholderFigure scrollProgress={scrollProgress} />}>

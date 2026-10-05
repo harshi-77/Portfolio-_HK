@@ -41,7 +41,7 @@ export interface Project {
 export interface ArchitectureNode {
   id: string;
   label: string;
-  type: 'input' | 'process' | 'output' | 'storage';
+  type: "input" | "process" | "output" | "storage";
   connections: string[];
 }
 
@@ -60,7 +60,7 @@ export interface TimelineEntry {
   title: string;
   subtitle: string;
   description: string;
-  type: 'education' | 'project' | 'hackathon' | 'learning' | 'achievement';
+  type: "education" | "project" | "hackathon" | "learning" | "achievement";
   tags?: string[];
 }
 
@@ -86,7 +86,7 @@ export interface Achievement {
 
 export interface ChatMessage {
   id: string;
-  role: 'user' | 'assistant';
+  role: "user" | "assistant";
   content: string;
   timestamp: Date;
 }

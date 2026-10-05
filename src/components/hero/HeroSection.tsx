@@ -1,6 +1,6 @@
-import { motion } from 'framer-motion';
-import { personalInfo } from '../../data/portfolio';
-import AvatarScene from '../three/AvatarScene';
+import { motion } from "framer-motion";
+import { personalInfo } from "../../data/portfolio";
+import AvatarScene from "../three/AvatarScene";
 
 interface HeroSectionProps {
   scrollProgress: number;
@@ -8,10 +8,7 @@ interface HeroSectionProps {
 
 export default function HeroSection({ scrollProgress }: HeroSectionProps) {
   return (
-    <section
-      id="hero"
-      className="relative min-h-screen flex items-center overflow-hidden"
-    >
+    <section id="hero" className="relative min-h-screen flex items-center overflow-hidden">
       {/* Background layers */}
       <div className="absolute inset-0 bg-[var(--bg)]" />
 
@@ -19,8 +16,8 @@ export default function HeroSection({ scrollProgress }: HeroSectionProps) {
       <div
         className="absolute inset-0 opacity-[0.03]"
         style={{
-          backgroundImage: 'radial-gradient(circle, #ffffff 1px, transparent 1px)',
-          backgroundSize: '32px 32px',
+          backgroundImage: "radial-gradient(circle, #ffffff 1px, transparent 1px)",
+          backgroundSize: "32px 32px",
         }}
       />
 
@@ -52,7 +49,7 @@ export default function HeroSection({ scrollProgress }: HeroSectionProps) {
               transition={{ duration: 0.7, delay: 0.3 }}
               className="font-space text-5xl sm:text-6xl lg:text-7xl font-700 leading-[0.95] tracking-tight text-white"
             >
-              {personalInfo.name.split(' ').map((word, i) => (
+              {personalInfo.name.split(" ").map((word, i) => (
                 <span key={i} className="block">
                   {i === 1 ? (
                     <span className="bg-gradient-to-r from-[var(--accent)] to-[var(--accent-purple)] bg-clip-text text-transparent">
@@ -93,7 +90,7 @@ export default function HeroSection({ scrollProgress }: HeroSectionProps) {
                 href="#projects"
                 onClick={(e) => {
                   e.preventDefault();
-                  document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' });
+                  document.querySelector("#projects")?.scrollIntoView({ behavior: "smooth" });
                 }}
                 className="px-6 py-3 bg-[var(--accent)] text-white text-sm font-500 tracking-wider font-inter rounded-lg hover:bg-blue-500 transition-colors"
               >
@@ -164,7 +161,9 @@ export default function HeroSection({ scrollProgress }: HeroSectionProps) {
         transition={{ delay: 1.5, duration: 0.5 }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
       >
-        <span className="text-[10px] tracking-[0.3em] text-[var(--text-muted)] font-inter">SCROLL</span>
+        <span className="text-[10px] tracking-[0.3em] text-[var(--text-muted)] font-inter">
+          SCROLL
+        </span>
         <div className="w-px h-8 bg-gradient-to-b from-[var(--border)] to-transparent animate-pulse" />
       </motion.div>
     </section>

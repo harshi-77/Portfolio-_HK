@@ -1,4 +1,4 @@
-import { personalInfo } from '../../data/portfolio';
+import { personalInfo } from "../../data/portfolio";
 
 export default function Footer() {
   return (
@@ -34,7 +34,9 @@ export default function Footer() {
           </a>
         </div>
 
-        <p className="text-xs text-[var(--text-muted)]">© 2024 Harshith Kumar. All rights reserved.</p>
+        <p className="text-xs text-[var(--text-muted)]">
+          © 2024 Harshith Kumar. All rights reserved.
+        </p>
       </div>
     </footer>
   );

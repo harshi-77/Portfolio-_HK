@@ -1,9 +1,9 @@
-import { motion } from 'framer-motion';
-import { personalInfo } from '../../data/portfolio';
+import { motion } from "framer-motion";
+import { personalInfo } from "../../data/portfolio";
 
 // Placeholder stats — wire to GitHub API by replacing these with API calls
 const placeholderStats = {
-  username: 'harshithkumar',
+  username: "harshithkumar",
   followers: 48,
   following: 32,
   publicRepos: 24,
@@ -12,18 +12,38 @@ const placeholderStats = {
 };
 
 const placeholderLanguages = [
-  { name: 'Python', percentage: 62, color: '#3776ab' },
-  { name: 'JavaScript', percentage: 18, color: '#f7df1e' },
-  { name: 'TypeScript', percentage: 10, color: '#3178c6' },
-  { name: 'HTML/CSS', percentage: 6, color: '#e34f26' },
-  { name: 'Other', percentage: 4, color: '#6b7280' },
+  { name: "Python", percentage: 62, color: "#3776ab" },
+  { name: "JavaScript", percentage: 18, color: "#f7df1e" },
+  { name: "TypeScript", percentage: 10, color: "#3178c6" },
+  { name: "HTML/CSS", percentage: 6, color: "#e34f26" },
+  { name: "Other", percentage: 4, color: "#6b7280" },
 ];
 
 const placeholderRepos = [
-  { name: 'ai-medical-imaging', description: 'Deep learning system for medical image analysis', stars: 23, language: 'Python' },
-  { name: 'farmlink', description: 'Agricultural AI platform for smallholder farmers', stars: 18, language: 'Python' },
-  { name: 'multimodal-authenticity', description: 'AI content authenticity detection system', stars: 15, language: 'Python' },
-  { name: 'smart-email-triage', description: 'NLP-powered email prioritization system', stars: 12, language: 'Python' },
+  {
+    name: "ai-medical-imaging",
+    description: "Deep learning system for medical image analysis",
+    stars: 23,
+    language: "Python",
+  },
+  {
+    name: "farmlink",
+    description: "Agricultural AI platform for smallholder farmers",
+    stars: 18,
+    language: "Python",
+  },
+  {
+    name: "multimodal-authenticity",
+    description: "AI content authenticity detection system",
+    stars: 15,
+    language: "Python",
+  },
+  {
+    name: "smart-email-triage",
+    description: "NLP-powered email prioritization system",
+    stars: 12,
+    language: "Python",
+  },
 ];
 
 export default function GithubSection() {
@@ -33,7 +53,7 @@ export default function GithubSection() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-80px' }}
+          viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.6 }}
           className="mb-16"
         >
@@ -65,12 +85,15 @@ export default function GithubSection() {
           className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-10"
         >
           {[
-            { label: 'Repositories', value: placeholderStats.publicRepos },
-            { label: 'Total Stars', value: placeholderStats.totalStars },
-            { label: 'Followers', value: placeholderStats.followers },
-            { label: 'Total Forks', value: placeholderStats.totalForks },
+            { label: "Repositories", value: placeholderStats.publicRepos },
+            { label: "Total Stars", value: placeholderStats.totalStars },
+            { label: "Followers", value: placeholderStats.followers },
+            { label: "Total Forks", value: placeholderStats.totalForks },
           ].map((stat) => (
-            <div key={stat.label} className="p-5 rounded-xl border border-[var(--border)] bg-[var(--surface)] text-center">
+            <div
+              key={stat.label}
+              className="p-5 rounded-xl border border-[var(--border)] bg-[var(--surface)] text-center"
+            >
               <p className="font-space text-3xl font-700 text-white">{stat.value}</p>
               <p className="text-xs text-[var(--text-muted)] font-inter mt-1">{stat.label}</p>
             </div>
@@ -80,7 +103,9 @@ export default function GithubSection() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Top repos */}
           <div className="lg:col-span-2 space-y-4">
-            <h3 className="text-xs tracking-[0.2em] text-[var(--text-muted)] font-inter mb-4">FEATURED REPOSITORIES</h3>
+            <h3 className="text-xs tracking-[0.2em] text-[var(--text-muted)] font-inter mb-4">
+              FEATURED REPOSITORIES
+            </h3>
             {placeholderRepos.map((repo, i) => (
               <motion.a
                 key={repo.name}
@@ -94,11 +119,17 @@ export default function GithubSection() {
                 className="flex items-center justify-between p-4 rounded-xl border border-[var(--border)] bg-[var(--surface)] hover:border-white/15 transition-colors group"
               >
                 <div>
-                  <p className="text-sm font-500 text-white group-hover:text-[var(--accent)] transition-colors font-inter">{repo.name}</p>
-                  <p className="text-xs text-[var(--text-muted)] font-inter mt-0.5">{repo.description}</p>
+                  <p className="text-sm font-500 text-white group-hover:text-[var(--accent)] transition-colors font-inter">
+                    {repo.name}
+                  </p>
+                  <p className="text-xs text-[var(--text-muted)] font-inter mt-0.5">
+                    {repo.description}
+                  </p>
                 </div>
                 <div className="flex items-center gap-4 flex-shrink-0 ml-4">
-                  <span className="text-xs text-[var(--text-muted)] font-inter">{repo.language}</span>
+                  <span className="text-xs text-[var(--text-muted)] font-inter">
+                    {repo.language}
+                  </span>
                   <span className="flex items-center gap-1 text-xs text-amber-400 font-inter">
                     ★ {repo.stars}
                   </span>
@@ -115,7 +146,9 @@ export default function GithubSection() {
             transition={{ duration: 0.6 }}
             className="p-6 rounded-xl border border-[var(--border)] bg-[var(--surface)]"
           >
-            <h3 className="text-xs tracking-[0.2em] text-[var(--text-muted)] font-inter mb-6">LANGUAGES</h3>
+            <h3 className="text-xs tracking-[0.2em] text-[var(--text-muted)] font-inter mb-6">
+              LANGUAGES
+            </h3>
 
             {/* Bar chart */}
             <div className="flex h-3 rounded-full overflow-hidden mb-6">
@@ -132,10 +165,15 @@ export default function GithubSection() {
               {placeholderLanguages.map((lang) => (
                 <div key={lang.name} className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 rounded-full flex-shrink-0" style={{ backgroundColor: lang.color }} />
+                    <div
+                      className="w-2 h-2 rounded-full flex-shrink-0"
+                      style={{ backgroundColor: lang.color }}
+                    />
                     <span className="text-xs text-[var(--text)] font-inter">{lang.name}</span>
                   </div>
-                  <span className="text-xs text-[var(--text-muted)] font-inter">{lang.percentage}%</span>
+                  <span className="text-xs text-[var(--text-muted)] font-inter">
+                    {lang.percentage}%
+                  </span>
                 </div>
               ))}
             </div>

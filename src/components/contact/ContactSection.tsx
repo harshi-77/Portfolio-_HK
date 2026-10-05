@@ -1,20 +1,20 @@
-import { useState, FormEvent } from 'react';
-import { motion } from 'framer-motion';
-import { personalInfo } from '../../data/portfolio';
+import { useState, FormEvent } from "react";
+import { motion } from "framer-motion";
+import { personalInfo } from "../../data/portfolio";
 
-type FormState = 'idle' | 'loading' | 'success' | 'error';
+type FormState = "idle" | "loading" | "success" | "error";
 
 export default function ContactSection() {
-  const [formState, setFormState] = useState<FormState>('idle');
-  const [values, setValues] = useState({ name: '', email: '', message: '' });
+  const [formState, setFormState] = useState<FormState>("idle");
+  const [values, setValues] = useState({ name: "", email: "", message: "" });
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    setFormState('loading');
+    setFormState("loading");
     // Simulate async send — wire to a real backend/service here
     await new Promise((r) => setTimeout(r, 1500));
-    setFormState('success');
-    setValues({ name: '', email: '', message: '' });
+    setFormState("success");
+    setValues({ name: "", email: "", message: "" });
   };
 
   return (
@@ -23,20 +23,23 @@ export default function ContactSection() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-80px' }}
+          viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.6 }}
           className="mb-16 text-center"
         >
           <div className="flex items-center justify-center gap-3 mb-5">
             <span className="w-6 h-px bg-[var(--accent)]" />
-            <span className="text-xs tracking-[0.3em] text-[var(--accent)] font-inter">CONTACT</span>
+            <span className="text-xs tracking-[0.3em] text-[var(--accent)] font-inter">
+              CONTACT
+            </span>
             <span className="w-6 h-px bg-[var(--accent)]" />
           </div>
           <h2 className="font-space text-4xl sm:text-5xl font-700 text-white leading-tight mb-4">
             Let's build something great
           </h2>
           <p className="text-sm text-[var(--text-muted)] font-inter max-w-md mx-auto leading-relaxed">
-            Open to internships, research collaborations, and interesting AI/ML projects. Drop a message below.
+            Open to internships, research collaborations, and interesting AI/ML projects. Drop a
+            message below.
           </p>
         </motion.div>
 
@@ -52,7 +55,12 @@ export default function ContactSection() {
             <ContactLink
               icon={
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={1.5}
+                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                  />
                 </svg>
               }
               label="Email"
@@ -82,7 +90,9 @@ export default function ContactSection() {
 
             <div className="mt-4 p-4 rounded-xl border border-[var(--border)] bg-[var(--surface)]">
               <p className="text-xs text-[var(--text-muted)] font-inter leading-relaxed">
-                Best for <span className="text-white">internship inquiries</span>, <span className="text-white">research collaborations</span>, or just a conversation about AI/ML. I typically respond within 24 hours.
+                Best for <span className="text-white">internship inquiries</span>,{" "}
+                <span className="text-white">research collaborations</span>, or just a conversation
+                about AI/ML. I typically respond within 24 hours.
               </p>
             </div>
           </motion.div>
@@ -95,7 +105,7 @@ export default function ContactSection() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="lg:col-span-3"
           >
-            {formState === 'success' ? (
+            {formState === "success" ? (
               <div className="h-full flex flex-col items-center justify-center gap-4 p-10 rounded-xl border border-green-500/30 bg-green-500/5">
                 <span className="text-4xl">✓</span>
                 <h3 className="font-space text-xl font-600 text-white">Message sent!</h3>
@@ -103,7 +113,7 @@ export default function ContactSection() {
                   Thanks for reaching out. I'll get back to you shortly.
                 </p>
                 <button
-                  onClick={() => setFormState('idle')}
+                  onClick={() => setFormState("idle")}
                   className="mt-2 text-xs text-[var(--accent)] hover:underline font-inter"
                 >
                   Send another
@@ -128,7 +138,9 @@ export default function ContactSection() {
                   />
                 </div>
                 <div className="flex flex-col gap-1.5">
-                  <label className="text-xs tracking-wider text-[var(--text-muted)] font-inter">Message</label>
+                  <label className="text-xs tracking-wider text-[var(--text-muted)] font-inter">
+                    Message
+                  </label>
                   <textarea
                     value={values.message}
                     onChange={(e) => setValues((p) => ({ ...p, message: e.target.value }))}
@@ -139,22 +151,24 @@ export default function ContactSection() {
                   />
                 </div>
 
-                {formState === 'error' && (
-                  <p className="text-xs text-red-400 font-inter">Something went wrong. Please try again.</p>
+                {formState === "error" && (
+                  <p className="text-xs text-red-400 font-inter">
+                    Something went wrong. Please try again.
+                  </p>
                 )}
 
                 <button
                   type="submit"
-                  disabled={formState === 'loading'}
+                  disabled={formState === "loading"}
                   className="px-6 py-3 bg-[var(--accent)] text-white text-sm font-500 tracking-wider font-inter rounded-lg hover:bg-blue-500 transition-colors disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                 >
-                  {formState === 'loading' ? (
+                  {formState === "loading" ? (
                     <>
                       <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
                       Sending...
                     </>
                   ) : (
-                    'SEND MESSAGE'
+                    "SEND MESSAGE"
                   )}
                 </button>
               </form>
@@ -167,7 +181,11 @@ export default function ContactSection() {
 }
 
 function FormField({
-  label, type, value, onChange, required,
+  label,
+  type,
+  value,
+  onChange,
+  required,
 }: {
   label: string;
   type: string;
@@ -191,7 +209,10 @@ function FormField({
 }
 
 function ContactLink({
-  icon, label, value, href,
+  icon,
+  label,
+  value,
+  href,
 }: {
   icon: React.ReactNode;
   label: string;
@@ -205,10 +226,16 @@ function ContactLink({
       rel="noopener noreferrer"
       className="flex items-center gap-4 p-4 rounded-xl border border-[var(--border)] bg-[var(--surface)] hover:border-[var(--accent)]/30 hover:bg-[var(--accent)]/5 transition-all group"
     >
-      <span className="text-[var(--text-muted)] group-hover:text-[var(--accent)] transition-colors">{icon}</span>
+      <span className="text-[var(--text-muted)] group-hover:text-[var(--accent)] transition-colors">
+        {icon}
+      </span>
       <div>
-        <p className="text-[10px] tracking-wider text-[var(--text-muted)] font-inter">{label.toUpperCase()}</p>
-        <p className="text-xs text-[var(--text)] font-inter mt-0.5 group-hover:text-white transition-colors">{value}</p>
+        <p className="text-[10px] tracking-wider text-[var(--text-muted)] font-inter">
+          {label.toUpperCase()}
+        </p>
+        <p className="text-xs text-[var(--text)] font-inter mt-0.5 group-hover:text-white transition-colors">
+          {value}
+        </p>
       </div>
     </a>
   );

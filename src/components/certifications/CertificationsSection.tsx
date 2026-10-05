@@ -1,5 +1,5 @@
-import { motion } from 'framer-motion';
-import { certifications } from '../../data/portfolio';
+import { motion } from "framer-motion";
+import { certifications } from "../../data/portfolio";
 
 export default function CertificationsSection() {
   return (
@@ -8,13 +8,15 @@ export default function CertificationsSection() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-80px' }}
+          viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.6 }}
           className="mb-16"
         >
           <div className="flex items-center gap-3 mb-5">
             <span className="w-6 h-px bg-[var(--accent)]" />
-            <span className="text-xs tracking-[0.3em] text-[var(--accent)] font-inter">CERTIFICATIONS</span>
+            <span className="text-xs tracking-[0.3em] text-[var(--accent)] font-inter">
+              CERTIFICATIONS
+            </span>
           </div>
           <h2 className="font-space text-4xl sm:text-5xl font-700 text-white leading-tight">
             Credentials & learning
@@ -42,12 +44,17 @@ export default function CertificationsSection() {
                 </div>
               </div>
 
-              <p className="text-xs text-[var(--text-muted)] font-inter leading-relaxed">{cert.description}</p>
+              <p className="text-xs text-[var(--text-muted)] font-inter leading-relaxed">
+                {cert.description}
+              </p>
 
               {/* Skills */}
               <div className="flex flex-wrap gap-1.5">
                 {cert.skills.map((s) => (
-                  <span key={s} className="text-[10px] px-2 py-0.5 rounded bg-[var(--bg)] border border-[var(--border)] text-[var(--text-muted)] font-inter">
+                  <span
+                    key={s}
+                    className="text-[10px] px-2 py-0.5 rounded bg-[var(--bg)] border border-[var(--border)] text-[var(--text-muted)] font-inter"
+                  >
                     {s}
                   </span>
                 ))}
