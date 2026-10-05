@@ -1,0 +1,10 @@
+node_modules
+.output
+.wrangler
+.nitro
+dist
+.env
+.env.*
+!.env.example
+.DS_Store
+Thumbs.db
