@@ -24,7 +24,7 @@ export const Route = createFileRoute("/")({
 });
 
 const nav = ["about", "skills", "projects", "journey", "certifications", "contact"];
-const projectImages = [medicalImage, authenticityImage, farmImage, systemsImage, systemsImage];
+const projectImages = [systemsImage, medicalImage, authenticityImage, farmImage, systemsImage];
 const reveal = { initial: { opacity: 0, y: 28 }, whileInView: { opacity: 1, y: 0 }, viewport: { once: true, margin: "-80px" }, transition: { duration: 0.7 } };
 
 function Arrow() { return <span aria-hidden="true">↗</span>; }
@@ -108,7 +108,7 @@ function Portfolio() {
         </section>
 
         <section id="github" className="github-section">
-          <p className="eyebrow">OPEN SOURCE / GITHUB</p><h2>Code should be<br />seen in motion.</h2><a href={personalInfo.github} target="_blank" rel="noreferrer">Explore repositories <Arrow /></a>
+          <p className="eyebrow">OPEN SOURCE / GITHUB</p><h2>Code should be<br />seen in motion.</h2><a href={personalInfo.github} target="_blank" rel="noreferrer">Explore repositories <Arrow /></a><GithubStats />
         </section>
 
         <section id="contact" className="section contact-section">
@@ -117,7 +117,7 @@ function Portfolio() {
         </section>
       </main>
 
-      <footer><span>© 2026 Harshith Kumar</span><span>AI / DATA / SOFTWARE</span><a href="#top">Back to top ↑</a></footer>
+      <footer><span>© {new Date().getFullYear()} Harshith Kumar</span><span>AI / DATA / SOFTWARE</span><a href="#top">Back to top ↑</a></footer>
       <button className="cera-orb" onClick={() => setCeraOpen(true)} aria-label="Open CERA"><span>C</span><i /></button>
       <Cera open={ceraOpen} onClose={() => setCeraOpen(false)} />
       <ProjectModal project={selected} onClose={() => setSelected(null)} />
@@ -139,8 +139,8 @@ function ProjectModal({ project, onClose }: { project: Project | null; onClose: 
 }
 
 const ceraReplies = [
-  { keys: ["medical", "imaging"], answer: "Harshith’s medical imaging project uses CNNs and Transformers to identify anomalies, with Grad-CAM explanations and 94.2% test accuracy." },
-  { keys: ["project", "built"], answer: "Harshith has built five major projects across medical imaging, content authenticity, agriculture, email intelligence, and public grievance routing." },
+  { keys: ["medical", "imaging"], answer: "Harshith built an end-to-end AI medical imaging application detecting anomalies in X-rays and MRIs, using PyTorch and TensorFlow." },
+  { keys: ["project", "built"], answer: "Harshith has built intelligent mobility platforms (DISHA), AI medical imaging dashboards, smart email triage tools, cattle breed recognition systems, and stock market predictors." },
   { keys: ["skill", "technolog"], answer: "His toolkit includes Python, PyTorch, TensorFlow, React, FastAPI, computer vision, NLP, PostgreSQL, and modern deployment tools." },
   { keys: ["certif"], answer: "His credentials span Deep Learning, Machine Learning, NLP, and AWS Cloud fundamentals." },
   { keys: ["contact", "reach"], answer: `You can contact Harshith at ${personalInfo.email}, or use the contact section below.` },
@@ -151,4 +151,24 @@ function Cera({ open, onClose }: { open: boolean; onClose: () => void }) {
   const suggestions = ["Who is Harshith?", "Show me his projects.", "Tell me about medical imaging.", "How can I contact him?"];
   const send = (text = input) => { const value = text.trim(); if (!value) return; const lower = value.toLowerCase(); const found = ceraReplies.find((r) => r.keys.some((k) => lower.includes(k))); setMessages((m) => [...m, { role: "user", text: value }, { role: "assistant", text: found?.answer ?? "I can guide you through Harshith’s projects, skills, certifications, and contact information." }]); setInput(""); };
   return <AnimatePresence>{open && <motion.aside className="cera-panel" initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: 30 }}><header><div><p>CERA</p><small>Your AI guide to Harshith Kumar</small></div><button onClick={onClose} aria-label="Close CERA">×</button></header><div className="cera-messages">{messages.map((m, i) => <div key={i} className={m.role}>{m.text}</div>)}{messages.length === 1 && <div className="suggestions">{suggestions.map((s) => <button key={s} onClick={() => send(s)}>{s}</button>)}</div>}</div><form onSubmit={(e) => { e.preventDefault(); send(); }}><input value={input} onChange={(e) => setInput(e.target.value)} placeholder="Ask about Harshith…" aria-label="Ask CERA" /><button type="submit">→</button></form><p className="cera-note">Portfolio guide · API-ready</p></motion.aside>}</AnimatePresence>;
+}
+function GithubStats() {
+  const [stats, setStats] = useState({ repos: 0, stars: 0, followers: 0 });
+  useEffect(() => {
+    fetch('https://api.github.com/users/harshi-77')
+      .then(r => r.json())
+      .then(d => {
+        if (d && d.public_repos !== undefined) {
+          setStats(s => ({ ...s, repos: d.public_repos, followers: d.followers }));
+        }
+      })
+      .catch(e => console.error(e));
+  }, []);
+  
+  return (
+    <div style={{ marginTop: '2rem', display: 'flex', gap: '2rem', justifyContent: 'center' }}>
+      <div><h3 style={{ fontSize: '2rem' }}>{stats.repos}</h3><p className="eyebrow">Repositories</p></div>
+      <div><h3 style={{ fontSize: '2rem' }}>{stats.followers}</h3><p className="eyebrow">Followers</p></div>
+    </div>
+  );
 }

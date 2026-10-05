@@ -8,14 +8,14 @@ import type {
 } from '../types/portfolio';
 
 export const personalInfo: PersonalInfo = {
-  name: 'HARSHITH KUMAR',
-  title: 'AI & DATA Science Student',
-  subtitle: 'Building intelligent systems at the intersection of AI, data, and software.',
+  name: 'HARSHITH KUMAR D H',
+  title: 'Full-Stack Developer & AI/DS Student',
+  subtitle: 'Building intelligent systems using React, Python, and Machine Learning.',
   description:
-    'Passionate about machine learning, computer vision, and building real-world AI applications that solve meaningful problems. Currently pursuing expertise in deep learning and multimodal AI systems.',
-  email: 'harshithkumar@example.com',
-  github: 'https://github.com/harshithkumar',
-  linkedin: 'https://linkedin.com/in/harshithkumar',
+    'B.E. Artificial Intelligence & Data Science student seeking Full-Stack Developer opportunities, with hands-on experience building web applications using React, Python, FastAPI, and machine-learning integrations. Experienced in developing project prototypes with a focus on practical problem solving.',
+  email: 'harshith63633@gmail.com',
+  github: 'https://github.com/harshi-77',
+  linkedin: 'https://linkedin.com/in/harshith-kumar-316a93339',
   resumeUrl: '/resume.pdf',
 };
 
@@ -78,382 +78,316 @@ export const skillCategories: SkillCategory[] = [
 
 export const projects: Project[] = [
   {
-    id: 'ai-medical-imaging',
-    title: 'AI Medical Imaging Analysis',
-    shortDescription:
-      'Deep learning system for automated detection and classification of medical anomalies in radiological images.',
-    description:
-      'A comprehensive AI-powered platform that leverages convolutional neural networks and transformer architectures to analyze medical imaging data, assisting radiologists in early detection of diseases.',
-    problem:
-      'Radiologists face an overwhelming volume of medical scans daily, leading to diagnostic fatigue and potential missed anomalies. Early detection is critical for patient outcomes.',
-    solution:
-      'Built a multi-stage deep learning pipeline that preprocesses DICOM images, detects regions of interest using object detection, and classifies anomalies with confidence scoring. Includes an explainability module using Grad-CAM.',
-    role: 'Led model architecture design, implemented the training pipeline, and built the FastAPI backend with React frontend for radiologist interaction.',
+    id: 'disha-route-planning',
+    title: 'DISHA - Route Planning Platform',
+    shortDescription: 'Intelligent mobility and route planning platform for dynamic optimization.',
+    description: 'Full-stack project for intelligent mobility and dynamic route planning, currently being developed in a team of 6 to optimize travel operations.',
+    problem: 'Inefficient route planning in mobility systems causes delays, wasted fuel, and high operating costs.',
+    solution: 'Developing a full-stack platform that incorporates dynamic route-planning and optimization algorithms to reduce travel time overhead.',
+    role: 'Full-stack development: contributed across frontend (React/Tailwind) and partial backend (FastAPI/Supabase).',
     keyFeatures: [
-      'Automated anomaly detection with bounding box localization',
-      'Grad-CAM visual explanations for model decisions',
-      'DICOM image preprocessing pipeline',
-      'Real-time inference API with sub-second response',
-      'Confidence calibration for reliable uncertainty quantification',
+      'Dynamic route optimization and planning',
+      'Real-time tracking and database management',
+      'Interactive user dashboard for mobility operations'
     ],
-    techStack: ['Python', 'PyTorch', 'FastAPI', 'React', 'OpenCV', 'MONAI', 'Docker'],
+    techStack: ['React', 'Vite', 'Tailwind CSS', 'Python', 'FastAPI', 'Supabase', 'PostgreSQL'],
     architecture: [
-      { id: 'input', label: 'DICOM Input', type: 'input', connections: ['preprocess'] },
-      { id: 'preprocess', label: 'Preprocessing', type: 'process', connections: ['model'] },
-      { id: 'model', label: 'CNN Model', type: 'process', connections: ['explainer', 'output'] },
-      { id: 'explainer', label: 'Grad-CAM', type: 'process', connections: ['output'] },
-      { id: 'output', label: 'Results', type: 'output', connections: [] },
-      { id: 'storage', label: 'Results DB', type: 'storage', connections: ['output'] },
+      { id: 'ui', label: 'React Frontend', type: 'input', connections: ['api'] },
+      { id: 'api', label: 'FastAPI Backend', type: 'process', connections: ['db'] },
+      { id: 'db', label: 'Supabase PostgreSQL', type: 'storage', connections: [] },
     ],
     results: [
-      '94.2% classification accuracy on test dataset',
-      'Reduced radiologist review time by ~40%',
-      'Successfully processed 10,000+ medical images',
+      'Currently under development with a team of 6',
+      'Established core frontend and backend infrastructure'
     ],
     futureImprovements: [
-      '3D volumetric analysis for CT scans',
-      'Multi-modal fusion with patient history',
-      'Federated learning for privacy-preserving training',
+      'Integrate live traffic data API',
+      'Deploy mobile app version'
     ],
-    githubUrl: 'https://github.com/harshithkumar/ai-medical-imaging',
-    tags: ['Deep Learning', 'Computer Vision', 'Healthcare', 'FastAPI'],
+    githubUrl: 'https://github.com/harshi-77',
+    tags: ['Full-Stack', 'React', 'FastAPI', 'Supabase'],
     gradient: 'from-blue-600/20 to-cyan-600/10',
   },
   {
-    id: 'multimodal-authenticity',
-    title: 'Multi-Modal AI Content Authenticity Detection',
-    shortDescription:
-      'System to detect AI-generated and manipulated content across text, images, and audio modalities.',
-    description:
-      'A multimodal detection system that analyzes digital content across text, image, and audio domains to identify AI-generated or manipulated media, combating misinformation.',
-    problem:
-      'The proliferation of deepfakes and AI-generated content poses significant threats to information integrity and public trust.',
-    solution:
-      'Designed an ensemble approach combining specialized detectors for each modality, with a fusion layer that aggregates signals for a unified authenticity score.',
-    role: 'Designed the multimodal fusion architecture, implemented the image and text detection modules, and built the evaluation framework.',
+    id: 'ai-medical-imaging',
+    title: 'AI Medical Imaging Diagnostics',
+    shortDescription: 'End-to-end medical application for analyzing X-rays, MRIs, and CT scans.',
+    description: 'A comprehensive AI-powered dashboard that analyzes medical imaging data, detecting abnormalities with confidence scores and clinical guidance to assist healthcare providers.',
+    problem: 'High volume of medical scans can lead to diagnostic fatigue and delays in critical care reporting.',
+    solution: 'Built a multi-stage deep learning pipeline supporting X-ray/MRI/CT uploads that detects anomalies, generates PDF reports, and provides an end-to-end clinician dashboard.',
+    role: 'Full-Stack Developer (Team of 3) - implemented AI models and integrated frontend-backend systems.',
     keyFeatures: [
-      'Cross-modal consistency analysis',
-      'Frequency domain analysis for image artifacts',
-      'LLM-based text authenticity scoring',
-      'Real-time streaming detection API',
-      'Detailed provenance report generation',
+      'Multi-modal scan support (X-ray, MRI, CT)',
+      'Abnormality detection with confidence & severity outputs',
+      'PDF clinical reporting engine',
+      'Secure clinician dashboard with authentication'
     ],
-    techStack: ['Python', 'PyTorch', 'Transformers', 'OpenCV', 'FastAPI', 'React'],
+    techStack: ['React', 'Vite', 'Tailwind CSS', 'FastAPI', 'Supabase', 'PyTorch', 'TensorFlow', 'EfficientNet-B0', 'ResNet18', 'MobileNetV2'],
     architecture: [
-      { id: 'input', label: 'Content Input', type: 'input', connections: ['router'] },
-      { id: 'router', label: 'Modality Router', type: 'process', connections: ['text', 'image', 'audio'] },
-      { id: 'text', label: 'Text Detector', type: 'process', connections: ['fusion'] },
-      { id: 'image', label: 'Image Detector', type: 'process', connections: ['fusion'] },
-      { id: 'audio', label: 'Audio Detector', type: 'process', connections: ['fusion'] },
-      { id: 'fusion', label: 'Fusion Layer', type: 'process', connections: ['output'] },
-      { id: 'output', label: 'Authenticity Score', type: 'output', connections: [] },
+      { id: 'input', label: 'Scans Upload', type: 'input', connections: ['api'] },
+      { id: 'api', label: 'FastAPI Backend', type: 'process', connections: ['model', 'db'] },
+      { id: 'model', label: 'ResNet/EfficientNet', type: 'process', connections: ['api'] },
+      { id: 'db', label: 'Supabase', type: 'storage', connections: [] },
     ],
     results: [
-      '91% detection accuracy across modalities',
-      'Sub-200ms inference latency',
-      'Tested against state-of-the-art generative models',
+      'Completed project for SJC Institute of Technology Hackathon',
+      'Successfully integrated 3 distinct CNN architectures'
     ],
     futureImprovements: [
-      'Video temporal analysis',
-      'Adversarial robustness improvements',
-      'Browser extension for real-time detection',
+      '3D volumetric analysis for CT scans',
+      'HIPAA compliant cloud storage integration'
     ],
-    githubUrl: 'https://github.com/harshithkumar/multimodal-authenticity',
-    tags: ['Multimodal AI', 'Security', 'NLP', 'Computer Vision'],
-    gradient: 'from-purple-600/20 to-pink-600/10',
-  },
-  {
-    id: 'farmlink',
-    title: 'FarmLink — Agricultural AI Platform',
-    shortDescription:
-      'AI-powered platform connecting farmers with resources, crop disease detection, and market intelligence.',
-    description:
-      'An end-to-end agricultural technology platform that uses computer vision for crop disease detection, ML for yield prediction, and data analytics for market intelligence to empower small-scale farmers.',
-    problem:
-      'Small-scale farmers lack access to timely agricultural expertise, leading to crop losses and poor market decisions.',
-    solution:
-      'Built a mobile-first platform with offline capability that provides disease detection via phone camera, personalized crop recommendations, and real-time market price integration.',
-    role: 'Full-stack development, ML model training for disease detection, and database architecture design.',
-    keyFeatures: [
-      'Real-time crop disease detection via camera',
-      'Yield prediction based on historical and weather data',
-      'Farmer-to-buyer marketplace',
-      'Multilingual support',
-      'Offline-first mobile experience',
-    ],
-    techStack: ['Python', 'TensorFlow', 'React', 'FastAPI', 'Supabase', 'Firebase'],
-    architecture: [
-      { id: 'mobile', label: 'Mobile App', type: 'input', connections: ['api'] },
-      { id: 'api', label: 'FastAPI Backend', type: 'process', connections: ['cv', 'ml', 'db'] },
-      { id: 'cv', label: 'CV Disease Detector', type: 'process', connections: ['api'] },
-      { id: 'ml', label: 'Yield Predictor', type: 'process', connections: ['api'] },
-      { id: 'db', label: 'Supabase DB', type: 'storage', connections: ['api'] },
-      { id: 'output', label: 'Farmer Dashboard', type: 'output', connections: [] },
-    ],
-    results: [
-      '88% disease detection accuracy',
-      'Onboarded 500+ farmers in pilot',
-      'Reduced crop loss by estimated 25% in pilot group',
-    ],
-    futureImprovements: [
-      'Drone-based aerial crop monitoring',
-      'IoT sensor integration',
-      'Credit scoring for farmers',
-    ],
-    githubUrl: 'https://github.com/harshithkumar/farmlink',
-    tags: ['AgriTech', 'Computer Vision', 'Full-Stack', 'React'],
-    gradient: 'from-green-600/20 to-emerald-600/10',
+    githubUrl: 'https://github.com/harshi-77',
+    tags: ['Deep Learning', 'Computer Vision', 'Healthcare'],
+    gradient: 'from-red-600/20 to-rose-600/10',
   },
   {
     id: 'smart-email-triage',
-    title: 'Smart Email Triage',
-    shortDescription:
-      'AI-powered email prioritization and auto-response system using NLP and large language models.',
-    description:
-      'An intelligent email management system that classifies, prioritizes, and drafts responses using fine-tuned NLP models, reducing email overload for professionals.',
-    problem:
-      'Professionals spend an average of 2.5 hours daily on email. Important messages get buried in the noise.',
-    solution:
-      'Built a classification pipeline that categorizes emails by urgency and topic, drafts context-aware responses using an LLM, and integrates with Gmail/Outlook APIs.',
-    role: 'Designed the NLP pipeline, fine-tuned the classification model, and built the email integration layer.',
+    title: 'Smart Email Triage Tool',
+    shortDescription: 'Intelligent email management using NLP to categorize and prioritize incoming messages.',
+    description: 'An intelligent email application built for a hackathon that utilizes NLP and machine learning to categorize, prioritize, and manage high-volume incoming emails.',
+    problem: 'Professionals spend hours manually sorting and prioritizing emails, missing critical communications.',
+    solution: 'Developed a classification pipeline that analyzes email text using NLP, automatically tags urgency, and integrates across the full stack from database to frontend dashboard.',
+    role: 'Contributed across frontend, backend, database, NLP/ML email classification, API integration, and testing.',
     keyFeatures: [
-      'Multi-label email classification',
-      'Urgency scoring and intelligent prioritization',
-      'LLM-powered draft response generation',
-      'Gmail and Outlook integration',
-      'User feedback loop for continuous improvement',
+      'NLP-based email categorization and prioritization',
+      'Authentication and secure access',
+      'Interactive email management dashboard'
     ],
-    techStack: ['Python', 'Transformers', 'FastAPI', 'React', 'PostgreSQL', 'OpenAI API'],
+    techStack: ['Python', 'NLP', 'Machine Learning', 'API Integration'],
     architecture: [
-      { id: 'email', label: 'Email Input', type: 'input', connections: ['nlp'] },
-      { id: 'nlp', label: 'NLP Classifier', type: 'process', connections: ['priority', 'drafter'] },
-      { id: 'priority', label: 'Priority Scorer', type: 'process', connections: ['dashboard'] },
-      { id: 'drafter', label: 'LLM Drafter', type: 'process', connections: ['dashboard'] },
-      { id: 'dashboard', label: 'User Dashboard', type: 'output', connections: ['db'] },
-      { id: 'db', label: 'Email Store', type: 'storage', connections: [] },
+      { id: 'email', label: 'Email API', type: 'input', connections: ['backend'] },
+      { id: 'backend', label: 'Backend API', type: 'process', connections: ['nlp', 'db'] },
+      { id: 'nlp', label: 'NLP Classifier', type: 'process', connections: ['backend'] },
+      { id: 'db', label: 'Database', type: 'storage', connections: [] },
     ],
     results: [
-      '93% classification accuracy',
-      'Saves ~1.5 hours/day per user in testing',
-      'Draft acceptance rate of 67%',
+      'Successfully delivered working prototype for Hackathon',
+      'Certificate Received'
     ],
     futureImprovements: [
-      'Calendar integration for smart scheduling',
-      'Thread summarization',
-      'Sentiment-aware response tone adjustment',
+      'Auto-drafting response feature',
+      'Integration with Gmail/Outlook OAuth'
     ],
-    githubUrl: 'https://github.com/harshithkumar/smart-email-triage',
-    tags: ['NLP', 'LLM', 'Productivity', 'Python'],
+    githubUrl: 'https://github.com/harshi-77',
+    tags: ['NLP', 'Machine Learning', 'Hackathon'],
     gradient: 'from-orange-600/20 to-amber-600/10',
   },
   {
-    id: 'ai-grievance-system',
-    title: 'AI Powered Grievance System',
-    shortDescription:
-      'Automated public grievance routing and resolution system using NLP classification and workflow automation.',
-    description:
-      'An intelligent grievance management platform for government and institutional use that automatically classifies complaints, routes them to appropriate departments, and tracks resolution.',
-    problem:
-      'Public grievance systems are plagued by manual processing, misrouting, and lack of transparency leading to citizen frustration and delayed resolutions.',
-    solution:
-      'Built an NLP-based classification engine that routes grievances to the correct department with confidence scores, tracks status, and sends automated updates to citizens.',
-    role: 'Led the NLP system design, built the routing engine, and designed the admin dashboard.',
+    id: 'indian-cattle-recognition',
+    title: 'Indian Cattle & Buffalo Breed Recognition',
+    shortDescription: 'Computer vision application for identifying regional cattle breeds.',
+    description: 'A computer-vision web application that identifies cattle and buffalo breeds from images and provides contextual breed information and related details.',
+    problem: 'Farmers and agricultural workers often lack easy tools for identifying and validating specific cattle breeds visually.',
+    solution: 'Trained a computer vision model using MobileNetV2 architecture wrapped in a full-stack platform to process uploaded images and identify variants.',
+    role: 'Full-Stack Developer (Team of 3)',
     keyFeatures: [
-      'Automatic department routing with confidence scores',
-      'Multilingual grievance support',
-      'Real-time status tracking for citizens',
-      'Analytics dashboard for administrators',
-      'Escalation triggers for unresolved cases',
+      'Image upload and real-time processing',
+      'MobileNetV2-powered classification',
+      'Breed information database integration'
     ],
-    techStack: ['Python', 'Transformers', 'Flask', 'React', 'MongoDB', 'Redis'],
+    techStack: ['Python', 'Machine Learning', 'Computer Vision', 'MobileNetV2'],
     architecture: [
-      { id: 'input', label: 'Citizen Portal', type: 'input', connections: ['nlp'] },
-      { id: 'nlp', label: 'NLP Classifier', type: 'process', connections: ['router'] },
-      { id: 'router', label: 'Department Router', type: 'process', connections: ['dept', 'db'] },
-      { id: 'dept', label: 'Department Portal', type: 'output', connections: ['db'] },
-      { id: 'db', label: 'MongoDB', type: 'storage', connections: ['tracker'] },
-      { id: 'tracker', label: 'Status Tracker', type: 'output', connections: [] },
+      { id: 'ui', label: 'Dashboard Upload', type: 'input', connections: ['cv'] },
+      { id: 'cv', label: 'MobileNetV2 Model', type: 'process', connections: ['db'] },
+      { id: 'db', label: 'Breed Info DB', type: 'storage', connections: [] }
     ],
     results: [
-      '89% routing accuracy',
-      '60% reduction in manual processing time',
-      'Average resolution time reduced by 3 days',
+      'Successfully completed prototype platform',
+      'Accurate identification across primary regional breeds'
     ],
     futureImprovements: [
-      'Voice-based grievance submission',
-      'Predictive resolution timeline',
-      'Integration with government APIs',
+      'Mobile application release',
+      'Expand dataset for rare breeds'
     ],
-    githubUrl: 'https://github.com/harshithkumar/ai-grievance-system',
-    tags: ['NLP', 'GovTech', 'Flask', 'MongoDB'],
-    gradient: 'from-red-600/20 to-rose-600/10',
+    githubUrl: 'https://github.com/harshi-77',
+    tags: ['Computer Vision', 'Machine Learning', 'MobileNetV2'],
+    gradient: 'from-purple-600/20 to-pink-600/10',
   },
+  {
+    id: 'stock-market-analysis',
+    title: 'Stock Market Analysis & Prediction',
+    shortDescription: 'Analysis and prediction engine for financial stock data.',
+    description: 'A college mini project focusing on analyzing historical stock market data and predicting future trends using machine learning techniques and IoT simulation.',
+    problem: 'Financial data is highly volatile and difficult to analyze manually for predictive insights.',
+    solution: 'Developed an analytics engine utilizing Python and R to process stock data streams and apply ML models for future movement projections.',
+    role: 'Developer on a college mini project (Presidency University Certificate).',
+    keyFeatures: [
+      'Historical data processing',
+      'Predictive ML model implementation',
+      'IoT data simulation integration'
+    ],
+    techStack: ['Python', 'R', 'Machine Learning', 'Web Development'],
+    architecture: [
+      { id: 'data', label: 'Stock APIs', type: 'input', connections: ['analysis'] },
+      { id: 'analysis', label: 'Python/R Analytics', type: 'process', connections: ['ml'] },
+      { id: 'ml', label: 'Prediction Model', type: 'process', connections: ['ui'] },
+      { id: 'ui', label: 'Web Dashboard', type: 'output', connections: [] }
+    ],
+    results: [
+      'Fully completed college-level project',
+      'Earned Presidency University Certificate'
+    ],
+    futureImprovements: [
+      'Live trading simulator integration',
+      'Sentiment analysis from financial news'
+    ],
+    githubUrl: 'https://github.com/harshi-77',
+    tags: ['Data Analysis', 'Finance', 'R', 'Python'],
+    gradient: 'from-green-600/20 to-emerald-600/10',
+  }
 ];
 
 export const timelineEntries: TimelineEntry[] = [
   {
     id: 'edu-1',
-    date: '2022 — Present',
-    title: 'B.Tech in Computer Science',
-    subtitle: 'Specialization in AI & Data Science',
-    description:
-      'Pursuing a Bachelor of Technology with a focus on machine learning, deep learning, and intelligent systems. Maintaining strong academic performance while working on real-world projects.',
+    date: '2024 — Expected 2028',
+    title: 'B.E. Artificial Intelligence & Data Science',
+    subtitle: 'Sapthagiri NPS University | 5th Semester',
+    description: 'B.E. student pursuing specialization in ML, Deep Learning, and Full-Stack Development. Current CGPA: 7.4.',
     type: 'education',
     tags: ['AI', 'Data Science', 'Computer Science'],
   },
   {
-    id: 'learn-1',
-    date: '2023',
-    title: 'Deep Learning Specialization',
-    subtitle: 'Self-directed Learning Journey',
-    description:
-      'Completed Andrew Ng\'s Deep Learning Specialization and supplemented with hands-on projects in computer vision and NLP.',
-    type: 'learning',
-    tags: ['Deep Learning', 'Neural Networks', 'PyTorch'],
+    id: 'edu-2',
+    date: '2024',
+    title: 'Pre-University Course (PUC)',
+    subtitle: 'Siddhaganga PU College',
+    description: 'Completed Pre-University Education with a score of 86%.',
+    type: 'education',
+    tags: ['Science'],
+  },
+  {
+    id: 'edu-3',
+    date: '2022',
+    title: 'Secondary School (SSLC)',
+    subtitle: 'BMN Public School',
+    description: 'Completed Secondary Education with a score of 80%.',
+    type: 'education',
+    tags: ['General'],
   },
   {
     id: 'project-1',
-    date: '2023',
-    title: 'First Major ML Project',
-    subtitle: 'AI Medical Imaging Analysis',
-    description:
-      'Developed a deep learning system for medical image analysis, achieving strong accuracy benchmarks and gaining hands-on experience with production ML pipelines.',
+    date: 'Ongoing',
+    title: 'DISHA - Route Planning Platform',
+    subtitle: 'Intelligent Mobility System',
+    description: 'Contributing as a Full-Stack developer for intelligent mobility using React, Vite, FastAPI, and Supabase.',
     type: 'project',
-    tags: ['Computer Vision', 'Healthcare AI'],
+    tags: ['React', 'FastAPI', 'Supabase'],
   },
   {
     id: 'hack-1',
-    date: '2023',
-    title: 'National Hackathon — Top 5',
-    subtitle: 'Smart India Hackathon',
-    description:
-      'Led a team of 5 to build an AI-powered grievance system for public administration, finishing in the top 5 nationally.',
+    date: '2024',
+    title: 'Smart Email Triage Tool',
+    subtitle: 'Hackathon Project',
+    description: 'Developed an intelligent email triage application using NLP and machine learning for email prioritization and drafting.',
     type: 'hackathon',
-    tags: ['NLP', 'GovTech', 'Team Leadership'],
+    tags: ['NLP', 'FastAPI', 'React'],
   },
   {
     id: 'project-2',
     date: '2024',
-    title: 'FarmLink Agricultural Platform',
-    subtitle: 'Social Impact AI Project',
-    description:
-      'Built a full-stack AI platform helping small-scale farmers with disease detection and market intelligence. Piloted with 500+ farmers.',
+    title: 'AI Medical Imaging Diagnostics',
+    subtitle: 'SJC Institute of Technology Hackathon',
+    description: 'End-to-end medical imaging app for X-ray/MRI anomaly detection using PyTorch, TensorFlow, and React.',
     type: 'project',
-    tags: ['AgriTech', 'Full-Stack', 'Impact'],
+    tags: ['Computer Vision', 'PyTorch', 'Medical AI'],
   },
   {
-    id: 'learn-2',
-    date: '2024',
-    title: 'Multimodal AI Research',
-    subtitle: 'Content Authenticity & Deepfake Detection',
-    description:
-      'Independently researched and implemented multimodal detection systems for AI-generated content, contributing to the fight against misinformation.',
+    id: 'learn-1',
+    date: '2025 - 2026',
+    title: 'Continuous Certifications',
+    subtitle: 'Infosys Springboard & Cisco',
+    description: 'Completed certifications in Advanced Excel, OpenAI GPT Models, Python Visualization, and CyberOps.',
     type: 'learning',
-    tags: ['Multimodal AI', 'Research', 'Security'],
-  },
-  {
-    id: 'achieve-1',
-    date: '2024',
-    title: 'Open Source Contributions',
-    subtitle: 'ML Tooling & Community',
-    description:
-      'Made contributions to open source ML projects and published research findings, growing community engagement.',
-    type: 'achievement',
-    tags: ['Open Source', 'Community'],
-  },
+    tags: ['Learning', 'CyberSecurity', 'GPT'],
+  }
 ];
 
 export const certifications: Certification[] = [
   {
     id: 'cert-1',
-    title: 'Deep Learning Specialization',
-    organization: 'Coursera / DeepLearning.AI',
-    date: 'November 2023',
-    credentialId: 'XXXX-XXXX',
-    credentialUrl: '#',
-    description:
-      'Five-course specialization covering neural networks, improving deep neural networks, structuring ML projects, CNNs, and sequence models.',
-    skills: ['Neural Networks', 'CNN', 'RNN', 'Python', 'TensorFlow'],
+    title: 'Advanced Excel Training 2019',
+    organization: 'Infosys Springboard',
+    date: '2026',
+    credentialId: 'INF-EXCEL-2026',
+    credentialUrl: 'https://springboard.infosys.com',
+    description: 'Comprehensive training in advanced Excel functionality including data manipulation and pivot tables.',
+    skills: ['Microsoft Excel', 'Data Analysis'],
   },
   {
     id: 'cert-2',
-    title: 'Machine Learning Professional Certificate',
-    organization: 'Google / Coursera',
-    date: 'August 2023',
-    credentialId: 'XXXX-XXXX',
-    credentialUrl: '#',
-    description:
-      'Comprehensive machine learning certification covering supervised, unsupervised, and reinforcement learning with practical implementations.',
-    skills: ['Machine Learning', 'Scikit-learn', 'Python', 'Data Analysis'],
+    title: 'Introduction to OpenAI GPT Models',
+    organization: 'Infosys Springboard',
+    date: '2026',
+    credentialId: 'INF-GPT-2026',
+    credentialUrl: 'https://springboard.infosys.com',
+    description: 'Understanding large language models, prompting techniques, and integration basics.',
+    skills: ['OpenAI', 'GPT', 'Prompt Engineering'],
   },
   {
     id: 'cert-3',
-    title: 'Natural Language Processing Specialization',
-    organization: 'Coursera / DeepLearning.AI',
-    date: 'March 2024',
-    credentialId: 'XXXX-XXXX',
-    credentialUrl: '#',
-    description:
-      'Specialized training in NLP including attention mechanisms, transformers, named entity recognition, and question answering systems.',
-    skills: ['NLP', 'Transformers', 'Attention Mechanisms', 'BERT'],
+    title: 'Data Visualisation with Python',
+    organization: 'Infosys Springboard',
+    date: '2026',
+    credentialId: 'INF-DATAV-2026',
+    credentialUrl: 'https://springboard.infosys.com',
+    description: 'Training in visualizing complex data sets programmatically using Python libraries.',
+    skills: ['Python', 'Data Visualization', 'Matplotlib'],
   },
   {
     id: 'cert-4',
-    title: 'AWS Cloud Practitioner',
-    organization: 'Amazon Web Services',
-    date: 'June 2024',
-    credentialId: 'XXXX-XXXX',
-    credentialUrl: '#',
-    description:
-      'Foundation-level AWS certification covering cloud concepts, core services, security, architecture, and pricing.',
-    skills: ['Cloud Computing', 'AWS', 'Architecture', 'Security'],
+    title: 'CyberOps Associate',
+    organization: 'Cisco Networking Academy',
+    date: '2025',
+    credentialId: 'CISCO-CYBER-2025',
+    credentialUrl: 'https://netacad.com',
+    description: 'Fundamental knowledge in cybersecurity operations and threat hunting.',
+    skills: ['Cybersecurity', 'Networking', 'Security Ops'],
   },
+  {
+    id: 'cert-5',
+    title: 'Introduction to Microcontrollers & Coding',
+    organization: 'Infosys Springboard (Centrada)',
+    date: '2026',
+    credentialId: 'INF-MICRO-2026',
+    credentialUrl: 'https://springboard.infosys.com',
+    description: 'Hardware integration and programming with microcontrollers.',
+    skills: ['Microcontrollers', 'IoT', 'Hardware'],
+  }
 ];
 
 export const achievements: Achievement[] = [
   {
     id: 'ach-1',
-    title: 'National Hackathon — Top 5',
-    description:
-      'Led a 5-member team to finish in the top 5 at a national-level hackathon with an AI-powered government grievance management system.',
+    title: 'SJC Institute Hackathon',
+    description: 'Built an end-to-end AI Medical Diagnostics application using deep learning in a team of 3.',
     date: '2023',
     category: 'Competition',
-    impact: 'Top 5 out of 200+ teams nationally',
+    impact: 'Completed working prototype',
   },
   {
     id: 'ach-2',
-    title: 'Academic Excellence Award',
-    description:
-      'Recognized for outstanding academic performance and contribution to the department\'s AI research initiatives.',
-    date: '2023',
-    category: 'Academic',
-    impact: 'Top 5% of cohort',
+    title: 'Smart Email Triage completion',
+    description: 'Developed an intelligent email triage application using NLP achieving completion certification.',
+    date: '2024',
+    category: 'Competition',
+    impact: 'Certificate Received',
   },
   {
     id: 'ach-3',
-    title: 'FarmLink Pilot Success',
-    description:
-      'Successfully deployed the FarmLink platform with 500+ real farmers, achieving measurable crop loss reduction in the pilot group.',
-    date: '2024',
-    category: 'Project Impact',
-    impact: '~25% crop loss reduction in pilot',
+    title: 'SIH 2026 - FarmLink AI',
+    description: 'Contributed research and presentation work addressing farmer-to-buyer platforms for problem statement SIH26033.',
+    date: '2026',
+    category: 'Research',
+    impact: 'Certificate Received',
   },
   {
     id: 'ach-4',
-    title: 'Open Source Contributor',
-    description:
-      'Contributed to ML tooling projects and published educational content on AI concepts reaching hundreds of learners.',
+    title: 'Stock Market Analysis Certification',
+    description: 'Completed a developer mini-project for stock market predictive analysis.',
     date: '2024',
-    category: 'Community',
-    impact: '10+ accepted PRs, 500+ learners reached',
-  },
-  {
-    id: 'ach-5',
-    title: 'Dean\'s List',
-    description:
-      'Consistently maintained GPA above the threshold for Dean\'s List recognition throughout the academic year.',
-    date: '2022 — Present',
     category: 'Academic',
-    impact: "Dean's List every semester",
-  },
+    impact: 'Presidency University Certificate',
+  }
 ];
