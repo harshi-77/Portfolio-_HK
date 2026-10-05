@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { createServerFn, useServerFn } from "@tanstack/react-start";
 import { AnimatePresence, motion, useScroll, useTransform } from "framer-motion";
 import { useEffect, useState, type FormEvent } from "react";
 import portrait from "@/assets/harshith-editorial.jpg";
@@ -469,43 +470,90 @@ function ProjectModal({ project, onClose }: { project: Project | null; onClose: 
   );
 }
 
-const ceraReplies = [
-  {
-    keys: ["medical", "imaging"],
-    answer:
-      "Harshith built an end-to-end AI medical imaging application detecting anomalies in X-rays and MRIs, using PyTorch and TensorFlow.",
-  },
-  {
-    keys: ["project", "built"],
-    answer:
-      "Harshith has built intelligent mobility platforms (DISHA), AI medical imaging dashboards, smart email triage tools, cattle breed recognition systems, and stock market predictors.",
-  },
-  {
-    keys: ["skill", "technolog"],
-    answer:
-      "His toolkit includes Python, PyTorch, TensorFlow, React, FastAPI, computer vision, NLP, PostgreSQL, and modern deployment tools.",
-  },
-  {
-    keys: ["certif"],
-    answer:
-      "His credentials span Deep Learning, Machine Learning, NLP, and AWS Cloud fundamentals.",
-  },
-  {
-    keys: ["contact", "reach"],
-    answer: `You can contact Harshith at ${personalInfo.email}, or use the contact section below.`,
-  },
-  {
-    keys: ["who", "harshith"],
-    answer:
-      "Harshith Kumar is an AI & Data Science student focused on useful, explainable intelligent systems.",
-  },
-];
+const getCeraWebhookUrl = () => {
+  const env = globalThis as typeof globalThis & {
+    process?: { env?: Record<string, string | undefined> };
+  };
+  return env.process?.env?.["CERA_WEBHOOK_URL"] ?? "";
+};
+
+type CeraMessage = {
+  role: "assistant" | "user";
+  text: string;
+};
+
+type CeraRequest = {
+  message: string;
+  sessionId: string;
+  history: Array<{ role: CeraMessage["role"]; content: string }>;
+};
+
+function extractCeraReply(data: unknown) {
+  if (typeof data === "string") return data;
+
+  if (data && typeof data === "object") {
+    const payload = data as Record<string, unknown>;
+    const directReply =
+      payload["reply"] ??
+      payload["response"] ??
+      payload["answer"] ??
+      payload["message"] ??
+      payload["text"];
+    const output = payload["output"];
+
+    if (typeof directReply === "string") return directReply;
+
+    if (Array.isArray(output) && typeof output[0] === "string") {
+      return output[0];
+    }
+
+    if (typeof output === "string") return output;
+  }
+
+  return "CERA received your message, but the automation returned an unexpected response format.";
+}
+
+const sendCeraMessage = createServerFn({ method: "POST" })
+  .validator((data: CeraRequest) => data)
+  .handler(async ({ data }) => {
+    const webhookUrl = getCeraWebhookUrl();
+
+    if (!webhookUrl) {
+      throw new Error("CERA_WEBHOOK_URL environment variable is not configured.");
+    }
+
+    const response = await fetch(webhookUrl, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        message: data.message,
+        sessionId: data.sessionId,
+        source: "portfolio-cera",
+        history: data.history,
+      }),
+    });
+
+    if (!response.ok) {
+      throw new Error(`CERA webhook failed with ${response.status}`);
+    }
+
+    const contentType = response.headers.get("content-type") ?? "";
+    const responseData = contentType.includes("application/json")
+      ? await response.json()
+      : await response.text();
+
+    return extractCeraReply(responseData);
+  });
+
 function Cera({ open, onClose }: { open: boolean; onClose: () => void }) {
+  const callCera = useServerFn(sendCeraMessage);
   const [input, setInput] = useState("");
-  const [messages, setMessages] = useState([
+  const [isSending, setIsSending] = useState(false);
+  const [sessionId] = useState(() => `cera-${Date.now()}-${Math.random().toString(36).slice(2)}`);
+  const [messages, setMessages] = useState<CeraMessage[]>([
     {
       role: "assistant",
-      text: "I’m CERA — your guide to Harshith Kumar. Ask about his work, skills, credentials, or contact details.",
+      text: "I’m CERA — your AI guide to Harshith Kumar. Ask about his work, skills, credentials, or contact details.",
     },
   ]);
   const suggestions = [
@@ -514,23 +562,43 @@ function Cera({ open, onClose }: { open: boolean; onClose: () => void }) {
     "Tell me about medical imaging.",
     "How can I contact him?",
   ];
-  const send = (text = input) => {
+
+  const send = async (text = input) => {
     const value = text.trim();
-    if (!value) return;
-    const lower = value.toLowerCase();
-    const found = ceraReplies.find((r) => r.keys.some((k) => lower.includes(k)));
-    setMessages((m) => [
-      ...m,
-      { role: "user", text: value },
-      {
-        role: "assistant",
-        text:
-          found?.answer ??
-          "I can guide you through Harshith’s projects, skills, certifications, and contact information.",
-      },
-    ]);
+    if (!value || isSending) return;
+
+    const nextMessages: CeraMessage[] = [...messages, { role: "user", text: value }];
+    setMessages(nextMessages);
     setInput("");
+    setIsSending(true);
+
+    try {
+      const reply = await callCera({
+        data: {
+          message: value,
+          sessionId,
+          history: nextMessages.map((message) => ({
+            role: message.role,
+            content: message.text,
+          })),
+        },
+      });
+
+      setMessages((current) => [...current, { role: "assistant", text: reply }]);
+    } catch (error) {
+      console.error(error);
+      setMessages((current) => [
+        ...current,
+        {
+          role: "assistant",
+          text: "CERA is having trouble reaching the automation right now. Please try again in a moment, or contact Harshith directly from the contact section.",
+        },
+      ]);
+    } finally {
+      setIsSending(false);
+    }
   };
+
   return (
     <AnimatePresence>
       {open && (
@@ -555,7 +623,8 @@ function Cera({ open, onClose }: { open: boolean; onClose: () => void }) {
                 {m.text}
               </div>
             ))}
-            {messages.length === 1 && (
+            {isSending && <div className="assistant">CERA is thinking…</div>}
+            {messages.length === 1 && !isSending && (
               <div className="suggestions">
                 {suggestions.map((s) => (
                   <button key={s} onClick={() => send(s)}>
@@ -568,7 +637,7 @@ function Cera({ open, onClose }: { open: boolean; onClose: () => void }) {
           <form
             onSubmit={(e) => {
               e.preventDefault();
-              send();
+              void send();
             }}
           >
             <input
@@ -576,10 +645,13 @@ function Cera({ open, onClose }: { open: boolean; onClose: () => void }) {
               onChange={(e) => setInput(e.target.value)}
               placeholder="Ask about Harshith…"
               aria-label="Ask CERA"
+              disabled={isSending}
             />
-            <button type="submit">→</button>
+            <button type="submit" disabled={isSending || !input.trim()}>
+              →
+            </button>
           </form>
-          <p className="cera-note">Portfolio guide · API-ready</p>
+          <p className="cera-note">Powered by n8n automation</p>
         </motion.aside>
       )}
     </AnimatePresence>
